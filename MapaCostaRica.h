@@ -1,3 +1,13 @@
+
+
+#include <GL/gl.h>
+#include <GL/glu.h>
+#include <GL/glut.h>
+#include <math.h>
+
+#include "./Operaciones/traslado.h"
+
+
 int len_x_universal = 28.41;
 int len_y_universal = 26.8;
 
@@ -75,3 +85,17 @@ UPOINT * heredia[58] = {
 	&hrd_40, &hrd_41, &hrd_42, &hrd_43, &hrd_44, &hrd_45, &hrd_46, &hrd_47, &hrd_48, &hrd_49,
 	&hrd_50, &hrd_51, &hrd_52, &hrd_53, &hrd_54, &hrd_55, &hrd_56, &hrd_57
 };
+
+typedef struct {
+  double r;
+  double g;
+  double b;
+} COLOR;
+
+void bressenham_line ();
+
+void plot();
+
+void paint_pol();
+
+void convert_utop();

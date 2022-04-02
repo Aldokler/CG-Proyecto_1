@@ -12,6 +12,12 @@ $(OUTPUT): $(OUTPUT).c
 
 #$(OBJECTS): MapaCostaRica.h
 
+SRCS = $(shell find  -name '*.c')
+
+all:
+	cc $(FLAGS) $(LDFLAGS)  -o $(OUTPUT) $(SRCS) $(LDLIBS)
+
+
 clean:
 	rm -f *.o
 	rm -f MapaCostaRica

@@ -1,32 +1,7 @@
-#include "malloc.h"
-
-#include <GL/gl.h>
-#include <GL/glu.h>
-#include <GL/glut.h>
-#include <math.h>
 #include "MapaCostaRica.h"
 
 #define H_SIZE 600
 #define V_SIZE 600
-
-typedef struct {
-  double r;
-  double g;
-  double b;
-} COLOR;
-
-typedef struct {
-  int x;
-  int y;
-} PIX;
-
-void bressenham_line ();
-
-void plot();
-
-void paint_pol();
-
-void convert_utop();
 
 COLOR **buffer;
 
@@ -35,6 +10,24 @@ COLOR **buffer;
 -----------------------------------------------------------------------------------------------------------------------------------------
 #########################################################################################################################################
 */
+
+void display (void)
+{
+  glClear (GL_COLOR_BUFFER_BIT);
+
+  PIX* puntos = malloc(58 * sizeof(PIX));
+  printf("%Lf, %Lf \n", heredia[0]->x, heredia[57]->x);
+  convert_utop(heredia, puntos, 58);
+  paint_pol(puntos, 58);
+
+  glClear (GL_COLOR_BUFFER_BIT);
+
+  /// Traslado
+  T_puntos(puntos, 58, 100, -10);
+  paint_pol(puntos, 58);
+
+  glFlush();
+}
 
 int main(int argc, char** argv) 
 {
@@ -62,10 +55,11 @@ int main(int argc, char** argv)
   glutCreateWindow("Una linea");
   glClear(GL_COLOR_BUFFER_BIT);
   gluOrtho2D(-0.5, H_SIZE +0.5, -0.5, V_SIZE + 0.5);
-  PIX* puntos = malloc(58 * sizeof(PIX));
-  printf("%Lf, %Lf \n", heredia[0]->x, heredia[57]->x);
-  convert_utop(heredia, puntos, 58);
-  paint_pol(puntos, 58);
+
+  /// Esencial
+  create_T_Matrix();
+
+  glutDisplayFunc(display);
   printf("Listo! \n");
   glutMainLoop();
 }
