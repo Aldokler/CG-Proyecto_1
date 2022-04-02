@@ -22,17 +22,27 @@ void display (void)
   PIX* puntosLimon = malloc(LEN_LIMON * sizeof(PIX)); 
   convert_utop(limon, puntosLimon, LEN_LIMON);
   paint_pol(puntosLimon, LEN_LIMON);
-  
-  glClear (GL_COLOR_BUFFER_BIT);
 
-  /// Traslado
+  PIX* puntosCartago = malloc(LEN_CARTAGO * sizeof(PIX)); 
+  convert_utop(cartago, puntosCartago, LEN_CARTAGO);
+  paint_pol(puntosCartago, LEN_CARTAGO);
+  
+  /*glClear (GL_COLOR_BUFFER_BIT);
+
+  // Traslado
   T_puntos(puntosHeredia, LEN_HEREDIA, -100, 10);
   paint_pol(puntosHeredia, LEN_HEREDIA);
   T_puntos(puntosLimon, LEN_LIMON, -100, 10);
-  paint_pol(puntosLimon, LEN_LIMON);
+  paint_pol(puntosLimon, LEN_LIMON);*/
 
   glFlush();
 }
+
+/*
+#########################################################################################################################################
+-----------------------------------------------------------------------------------------------------------------------------------------
+#########################################################################################################################################
+*/
 
 int main(int argc, char** argv) 
 {
