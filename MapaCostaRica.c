@@ -15,19 +15,21 @@ void display (void)
 {
   glClear (GL_COLOR_BUFFER_BIT);
 
-  PIX* puntos = malloc(58 * sizeof(PIX));
-  convert_utop(heredia, puntos, 58);
-  paint_pol(puntos, 58);
+  PIX* puntosHeredia = malloc(LEN_HEREDIA * sizeof(PIX));
+  convert_utop(heredia, puntosHeredia, LEN_HEREDIA);
+  paint_pol(puntosHeredia, LEN_HEREDIA);
 
-  PIX* puntosLimon = malloc(125 * sizeof(PIX)); 
-  convert_utop(limon, puntosLimon, 125);
-  paint_pol(puntosLimon, 125);
+  PIX* puntosLimon = malloc(LEN_LIMON * sizeof(PIX)); 
+  convert_utop(limon, puntosLimon, LEN_LIMON);
+  paint_pol(puntosLimon, LEN_LIMON);
   
   glClear (GL_COLOR_BUFFER_BIT);
 
   /// Traslado
-  T_puntos(puntos, 58, 100, -10);
-  paint_pol(puntos, 58);
+  T_puntos(puntosHeredia, LEN_HEREDIA, -100, 10);
+  paint_pol(puntosHeredia, LEN_HEREDIA);
+  T_puntos(puntosLimon, LEN_LIMON, -100, 10);
+  paint_pol(puntosLimon, LEN_LIMON);
 
   glFlush();
 }
@@ -61,6 +63,8 @@ int main(int argc, char** argv)
 
   glutDisplayFunc(display);
 
+  // Crea las matrices de cada operacionn
+  create_T_Matrix();
  
   printf("Listo! \n");
   glutMainLoop();

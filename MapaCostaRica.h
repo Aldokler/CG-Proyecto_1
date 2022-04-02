@@ -7,6 +7,8 @@
 
 #include "./Operaciones/traslado.h"
 
+#define LEN_HEREDIA 58
+#define LEN_LIMON 125
 
 int len_x_universal = 28.41;
 int len_y_universal = 26.8;
@@ -86,7 +88,7 @@ typedef struct {
 	UPOINT hrd_57 = {.x = 14.82, .y = 17.2};
 
 //HEREDIA
-UPOINT * heredia[58] = {
+UPOINT * heredia[LEN_HEREDIA] = {
 	&hrd_0, &hrd_1, &hrd_2, &hrd_3, &hrd_4, &hrd_5, &hrd_6, &hrd_7, &hrd_8, &hrd_9,
 	&hrd_10, &hrd_11, &hrd_12, &hrd_13, &hrd_14, &hrd_15, &hrd_16, &hrd_17, &hrd_18, &hrd_19,
 	&hrd_20, &hrd_21, &hrd_22, &hrd_23, &hrd_24, &hrd_25, &hrd_26, &hrd_27, &hrd_28, &hrd_29,
@@ -232,7 +234,7 @@ UPOINT * heredia[58] = {
 	UPOINT lmn_124 = {.x = 18.001, .y = 22.3};
 
 //LIMON
-UPOINT * limon[125] = {
+UPOINT * limon[LEN_LIMON] = {
 	&lmn_0, &lmn_1, &lmn_2, &lmn_3, &lmn_4, &lmn_5, &lmn_6, &lmn_7, &lmn_8, &lmn_9,
 	&lmn_10, &lmn_11, &lmn_12, &lmn_13, &lmn_14, &lmn_15, &lmn_16, &lmn_17, &lmn_18, &lmn_19,
 	&lmn_20, &lmn_21, &lmn_22, &lmn_23, &lmn_24, &lmn_25, &lmn_26, &lmn_27, &lmn_28, &lmn_29,
