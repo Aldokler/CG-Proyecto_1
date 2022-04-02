@@ -16,10 +16,13 @@ void display (void)
   glClear (GL_COLOR_BUFFER_BIT);
 
   PIX* puntos = malloc(58 * sizeof(PIX));
-  printf("%Lf, %Lf \n", heredia[0]->x, heredia[57]->x);
   convert_utop(heredia, puntos, 58);
   paint_pol(puntos, 58);
 
+  PIX* puntosLimon = malloc(125 * sizeof(PIX)); 
+  convert_utop(limon, puntosLimon, 125);
+  paint_pol(puntosLimon, 125);
+  
   glClear (GL_COLOR_BUFFER_BIT);
 
   /// Traslado
@@ -53,13 +56,12 @@ int main(int argc, char** argv)
   glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
   glutInitWindowSize(H_SIZE,V_SIZE);
   glutCreateWindow("Una linea");
-  glClear(GL_COLOR_BUFFER_BIT);
+  glClear(GL_COLOR_BUFFER_BIT); 
   gluOrtho2D(-0.5, H_SIZE +0.5, -0.5, V_SIZE + 0.5);
 
-  /// Esencial
-  create_T_Matrix();
-
   glutDisplayFunc(display);
+
+ 
   printf("Listo! \n");
   glutMainLoop();
 }
