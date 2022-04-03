@@ -10,6 +10,7 @@
 #define LEN_HEREDIA 58
 #define LEN_LIMON 125
 #define LEN_CARTAGO 55
+#define LEN_SANJOSE 119
 
 int len_x_universal = 28.41;
 int len_y_universal = 26.8;
@@ -325,6 +326,152 @@ UPOINT * cartago[LEN_CARTAGO] = {
 	&crt_30, &crt_31, &crt_32, &crt_33, &crt_34, &crt_35, &crt_36, &crt_37, &crt_38, &crt_39,
 	&crt_40, &crt_41, &crt_42, &crt_43, &crt_44, &crt_45, &crt_46, &crt_47, &crt_48, &crt_49,
 	&crt_50, &crt_51, &crt_52, &crt_53, &crt_54
+};
+
+/*
+####################################################################################################################
+====================================================================================================================
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+====================================================================================================================
+####################################################################################################################
+*/
+
+//SAN JOSE
+	UPOINT sjs_0 = {.x = 16.52, .y = 17.98}; //^^^ Limon ^^^ vvv Heredia vvv
+	UPOINT sjs_1 = {.x = 16.23, .y = 17.77};
+	UPOINT sjs_2 = {.x = 16.2, .y = 17.46};
+	UPOINT sjs_3 = {.x = 16.1, .y = 17.23};
+	UPOINT sjs_4 = {.x = 15.85, .y = 17.15};
+	UPOINT sjs_5 = {.x = 15.81, .y = 16.945};
+	UPOINT sjs_6 = {.x = 15.95, .y = 16.84};
+	UPOINT sjs_7 = {.x = 15.9, .y = 16.6};
+	UPOINT sjs_8 = {.x = 15.67, .y = 16.32};
+	UPOINT sjs_9 = {.x = 15.3, .y = 16.19};
+	UPOINT sjs_10 = {.x = 15.1, .y = 16.22};
+	UPOINT sjs_11 = {.x = 14.9, .y = 16.189};
+	UPOINT sjs_12 = {.x = 14.65, .y = 16.27};//^^^ Heredia ^^^ vvv Alajuela vvv
+	UPOINT sjs_13 = {.x = 14.05, .y = 15.93};
+	UPOINT sjs_14 = {.x = 13.84, .y = 15.92};
+	UPOINT sjs_15 = {.x = 13.45, .y = 15.81};
+	UPOINT sjs_16 = {.x = 13.12, .y = 16};
+	UPOINT sjs_17 = {.x = 12.92, .y = 15.9};
+	UPOINT sjs_18 = {.x = 12.43, .y = 15.82};
+	UPOINT sjs_19 = {.x = 12, .y = 15.5};
+	UPOINT sjs_20 = {.x = 11.8, .y = 15.21};//vvv Puntarenas vvv ^^^ Alajuela ^^^
+	UPOINT sjs_21 = {.x = 11.79, .y = 15.06};
+	UPOINT sjs_22 = {.x = 11.81, .y = 14.86};
+	UPOINT sjs_23 = {.x = 12, .y = 14.79};
+	UPOINT sjs_24 = {.x = 11.93, .y = 14.66};
+	UPOINT sjs_25 = {.x = 11.68, .y = 14.59};
+	UPOINT sjs_26 = {.x = 11.6, .y = 14.49};
+	UPOINT sjs_27 = {.x = 11.7, .y = 14.22};
+	UPOINT sjs_28 = {.x = 11.66, .y = 14.02};
+	UPOINT sjs_29 = {.x = 11.94, .y = 13.65};
+	UPOINT sjs_30 = {.x = 12.06, .y = 13.2};
+	UPOINT sjs_31 = {.x = 12.39, .y = 13.19};
+	UPOINT sjs_32 = {.x = 12.49, .y = 13.23};
+	UPOINT sjs_33 = {.x = 12.58, .y = 13.21};
+	UPOINT sjs_34 = {.x = 12.67, .y = 13.3};
+	UPOINT sjs_35 = {.x = 12.84, .y = 13.19};
+	UPOINT sjs_36 = {.x = 13.1, .y = 13.37};
+	UPOINT sjs_37 = {.x = 13.19, .y = 13.75};
+	UPOINT sjs_38 = {.x = 13.55, .y = 13.8};
+	UPOINT sjs_39 = {.x = 13.94, .y = 13.78};
+	UPOINT sjs_40 = {.x = 14.07, .y = 13.699};
+	UPOINT sjs_41 = {.x = 14.45, .y = 13.65};
+	UPOINT sjs_42 = {.x = 14.8, .y = 13.7};
+	UPOINT sjs_43 = {.x = 15.02, .y = 13.64};
+	UPOINT sjs_44 = {.x = 15.06, .y = 13.535};
+	UPOINT sjs_45 = {.x = 15, .y = 13.38};
+	UPOINT sjs_46 = {.x = 15.1, .y = 13.2};
+	UPOINT sjs_47 = {.x = 15.385, .y = 13.25};
+	UPOINT sjs_48 = {.x = 15.6, .y = 13.07};
+	UPOINT sjs_49 = {.x = 15.59, .y = 12.82};
+	UPOINT sjs_50 = {.x = 16.27, .y = 12.31};
+	UPOINT sjs_51 = {.x = 16.28, .y = 12.19};
+	UPOINT sjs_52 = {.x = 16.65, .y = 11.85};
+	UPOINT sjs_53 = {.x = 16.7, .y = 12};
+	UPOINT sjs_54 = {.x = 16.91, .y = 11.91};
+	UPOINT sjs_55 = {.x = 17.02, .y = 11.61};
+	UPOINT sjs_56 = {.x = 17.3, .y = 11.48};
+	UPOINT sjs_57 = {.x = 17.24, .y = 11};
+	UPOINT sjs_58 = {.x = 17.7, .y = 10.6};
+	UPOINT sjs_59 = {.x = 18, .y = 10.699};
+	UPOINT sjs_60 = {.x = 18.045, .y = 10.94};
+	UPOINT sjs_61 = {.x = 18.565, .y = 10.42};
+	UPOINT sjs_62 = {.x = 18.72, .y = 10};
+	UPOINT sjs_63 = {.x = 19.15, .y = 9.835};
+	UPOINT sjs_64 = {.x = 19.46, .y = 9.57};
+	UPOINT sjs_65 = {.x = 19.87, .y = 9.56};
+	UPOINT sjs_66 = {.x = 20.18, .y = 10.09};
+	UPOINT sjs_67 = {.x = 20.07, .y = 10.39};
+	UPOINT sjs_68 = {.x = 19.89, .y = 10.4};
+	UPOINT sjs_69 = {.x = 19.72, .y = 10.51};
+	UPOINT sjs_70 = {.x = 19.87, .y = 10.9};
+	UPOINT sjs_71 = {.x = 20.01, .y = 11};
+	UPOINT sjs_72 = {.x = 20.05, .y = 11.17};
+	UPOINT sjs_73 = {.x = 20.24, .y = 11.45};
+	UPOINT sjs_74 = {.x = 20.41, .y = 11.7};//^^^ Puntarenas ^^^ vvv Limon vvv
+	UPOINT sjs_75 = {.x = 20.1, .y = 12.2};
+	UPOINT sjs_76 = {.x = 20.08, .y = 12.4};
+	UPOINT sjs_77 = {.x = 20, .y = 12.47};
+	UPOINT sjs_78 = {.x = 19.84, .y = 12.8};//vvv Cartago vvv ^^^ Limon ^^^
+	UPOINT sjs_79 = {.x = 19.5, .y = 12.99};
+	UPOINT sjs_80 = {.x = 19.33, .y = 13};
+	UPOINT sjs_81 = {.x = 18.81, .y = 13.35};
+	UPOINT sjs_82 = {.x = 18.67, .y = 13.33};
+	UPOINT sjs_83 = {.x = 18.6, .y = 13.12};
+	UPOINT sjs_84 = {.x = 18.5, .y = 13.135};
+	UPOINT sjs_85 = {.x = 18.38, .y = 13.12};
+	UPOINT sjs_86 = {.x = 18, .y = 13.16};
+	UPOINT sjs_87 = {.x = 17.91, .y = 13.27};
+	UPOINT sjs_88 = {.x = 18, .y = 13.4};
+	UPOINT sjs_89 = {.x = 17.33, .y = 13.66};
+	UPOINT sjs_90 = {.x = 17.3, .y = 13.91};
+	UPOINT sjs_91 = {.x = 16.68, .y = 14.19};
+	UPOINT sjs_92 = {.x = 16.58, .y = 14.16};
+	UPOINT sjs_93 = {.x = 16.51, .y = 14.39};
+	UPOINT sjs_94 = {.x = 16.41, .y = 14.52};
+	UPOINT sjs_95 = {.x = 16.29, .y = 14.55};
+	UPOINT sjs_96 = {.x = 16.19, .y = 14.7};
+	UPOINT sjs_97 = {.x = 16.2, .y = 14.89};
+	UPOINT sjs_98 = {.x = 15.93, .y = 14.73};
+	UPOINT sjs_99 = {.x = 15.46, .y = 14.73};
+	UPOINT sjs_100 = {.x = 15.56, .y = 14.99};
+	UPOINT sjs_101 = {.x = 15.81, .y = 15.125};
+	UPOINT sjs_102 = {.x = 15.93, .y = 15.315};
+	UPOINT sjs_103 = {.x = 16.1, .y = 15.49};
+	UPOINT sjs_104 = {.x = 16.08, .y = 15.62};
+	UPOINT sjs_105 = {.x = 15.85, .y = 15.65};
+	UPOINT sjs_106 = {.x = 15.9, .y = 15.78};
+	UPOINT sjs_107 = {.x = 16.09, .y = 15.85};
+	UPOINT sjs_108 = {.x = 16.18, .y = 16.08};
+	UPOINT sjs_109 = {.x = 16.64, .y = 16.2};
+	UPOINT sjs_110 = {.x = 16.95, .y = 16.32};
+	UPOINT sjs_111 = {.x = 17.2, .y = 16.32};
+	UPOINT sjs_112 = {.x = 17.1, .y = 16.46};
+	UPOINT sjs_113 = {.x = 17.09, .y = 16.68};
+	UPOINT sjs_114 = {.x = 17, .y = 16.8};
+	UPOINT sjs_115 = {.x = 16.98, .y = 16.92};
+	UPOINT sjs_116 = {.x = 16.635, .y = 17.15};
+	UPOINT sjs_117 = {.x = 16.6, .y = 17.39};
+	UPOINT sjs_118 = {.x = 16.5, .y = 17.68};//^^^ Cartago ^^^ vvv Limon vvv
+
+//SAN JOSE
+UPOINT * sanJose[LEN_SANJOSE] = {
+	&sjs_0, &sjs_1, &sjs_2, &sjs_3, &sjs_4, &sjs_5, &sjs_6, &sjs_7, &sjs_8, &sjs_9,
+	&sjs_10, &sjs_11, &sjs_12, &sjs_13, &sjs_14, &sjs_15, &sjs_16, &sjs_17, &sjs_18, &sjs_19,
+	&sjs_20, &sjs_21, &sjs_22, &sjs_23, &sjs_24, &sjs_25, &sjs_26, &sjs_27, &sjs_28, &sjs_29,
+	&sjs_30, &sjs_31, &sjs_32, &sjs_33, &sjs_34, &sjs_35, &sjs_36, &sjs_37, &sjs_38, &sjs_39,
+	&sjs_40, &sjs_41, &sjs_42, &sjs_43, &sjs_44, &sjs_45, &sjs_46, &sjs_47, &sjs_48, &sjs_49,
+	&sjs_50, &sjs_51, &sjs_52, &sjs_53, &sjs_54, &sjs_55, &sjs_56, &sjs_57, &sjs_58, &sjs_59,
+	&sjs_60, &sjs_61, &sjs_62, &sjs_63, &sjs_64, &sjs_65, &sjs_66, &sjs_67, &sjs_68, &sjs_69,
+	&sjs_70, &sjs_71, &sjs_72, &sjs_73, &sjs_74, &sjs_75, &sjs_76, &sjs_77, &sjs_78, &sjs_79,
+	&sjs_80, &sjs_81, &sjs_82, &sjs_83, &sjs_84, &sjs_85, &sjs_86, &sjs_87, &sjs_88, &sjs_89,
+	&sjs_90, &sjs_91, &sjs_92, &sjs_93, &sjs_94, &sjs_95, &sjs_96, &sjs_97, &sjs_98, &sjs_99,
+	&sjs_100, &sjs_101, &sjs_102, &sjs_103, &sjs_104, &sjs_105, &sjs_106, &sjs_107, &sjs_108, &sjs_109,
+	&sjs_110, &sjs_111, &sjs_112, &sjs_113, &sjs_114, &sjs_115, &sjs_116, &sjs_117, &sjs_118
 };
 
 /*

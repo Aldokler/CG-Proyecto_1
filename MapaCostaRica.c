@@ -26,6 +26,10 @@ void display (void)
   PIX* puntosCartago = malloc(LEN_CARTAGO * sizeof(PIX)); 
   convert_utop(cartago, puntosCartago, LEN_CARTAGO);
   paint_pol(puntosCartago, LEN_CARTAGO);
+
+  PIX* puntosSanJose = malloc(LEN_SANJOSE * sizeof(PIX)); 
+  convert_utop(sanJose, puntosSanJose, LEN_SANJOSE);
+  paint_pol(puntosSanJose, LEN_SANJOSE);
   
   /*glClear (GL_COLOR_BUFFER_BIT);
 
