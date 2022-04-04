@@ -11,6 +11,7 @@
 #define LEN_LIMON 125
 #define LEN_CARTAGO 55
 #define LEN_SANJOSE 119
+#define LEN_ALAJUELA 80
 
 int len_x_universal = 28.41;
 int len_y_universal = 26.8;
@@ -472,6 +473,109 @@ UPOINT * sanJose[LEN_SANJOSE] = {
 	&sjs_90, &sjs_91, &sjs_92, &sjs_93, &sjs_94, &sjs_95, &sjs_96, &sjs_97, &sjs_98, &sjs_99,
 	&sjs_100, &sjs_101, &sjs_102, &sjs_103, &sjs_104, &sjs_105, &sjs_106, &sjs_107, &sjs_108, &sjs_109,
 	&sjs_110, &sjs_111, &sjs_112, &sjs_113, &sjs_114, &sjs_115, &sjs_116, &sjs_117, &sjs_118
+};
+
+/*
+####################################################################################################################
+====================================================================================================================
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+====================================================================================================================
+####################################################################################################################
+*/
+
+//ALAJUELA
+	UPOINT ljl_0 = {.x = 6.7, .y = 24.72};//^^^ Guanacaste ^^^ vvv Nicaragua vvv
+	UPOINT ljl_1 = {.x = 9.08, .y = 23.79};
+	UPOINT ljl_2 = {.x = 10.9, .y = 24.8};
+	UPOINT ljl_3 = {.x = 11.4, .y = 24.4};
+	UPOINT ljl_4 = {.x = 11.57, .y = 24.51};
+	UPOINT ljl_5 = {.x = 11.7, .y = 24.41};
+	UPOINT ljl_6 = {.x = 12.38, .y = 24.17};
+	UPOINT ljl_7 = {.x = 12.55, .y = 23.85};
+	UPOINT ljl_8 = {.x = 12.82, .y = 23.82};
+	UPOINT ljl_9 = {.x = 12.95, .y = 23.97};
+	UPOINT ljl_10 = {.x = 13.29, .y = 24.025};
+	UPOINT ljl_11 = {.x = 13.32, .y = 23.92};
+	UPOINT ljl_12 = {.x = 13.29, .y = 23.76};
+	UPOINT ljl_13 = {.x = 13.42, .y = 23.53};
+	UPOINT ljl_14 = {.x = 13.68, .y = 23.46};
+	UPOINT ljl_15 = {.x = 13.79, .y = 23.29};
+	UPOINT ljl_16 = {.x = 14.2, .y = 23.19};
+	UPOINT ljl_17 = {.x = 14.28, .y = 22.83};
+	UPOINT ljl_18 = {.x = 14.11, .y = 22.69};
+	UPOINT ljl_19 = {.x = 14.43, .y = 22.46};
+	UPOINT ljl_20 = {.x = 14.83, .y = 22.5};//vvv Heredia vvv ^^^ Nicaragua ^^^
+	UPOINT ljl_21 = {.x = 14.82, .y = 17.2};
+	UPOINT ljl_22 = {.x = 14.65, .y = 16.27};//^^^ Heredia ^^^ vvv San Jose vvv
+	UPOINT ljl_23 = {.x = 14.05, .y = 15.93};
+	UPOINT ljl_24 = {.x = 13.84, .y = 15.92};
+	UPOINT ljl_25 = {.x = 13.45, .y = 15.81};
+	UPOINT ljl_26 = {.x = 13.12, .y = 16};
+	UPOINT ljl_27 = {.x = 12.92, .y = 15.9};
+	UPOINT ljl_28 = {.x = 12.43, .y = 15.82};
+	UPOINT ljl_29 = {.x = 12, .y = 15.5};
+	UPOINT ljl_30 = {.x = 11.8, .y = 15.21};//vvv Puntarenas vvv ^^^ San Jose ^^^
+	UPOINT ljl_31 = {.x = 11.5, .y = 15.49};
+	UPOINT ljl_32 = {.x = 11.21, .y = 15.48};
+	UPOINT ljl_33 = {.x = 10.93, .y = 15.59};
+	UPOINT ljl_34 = {.x = 10.92, .y = 15.79};
+	UPOINT ljl_35 = {.x = 11.09, .y = 15.82};
+	UPOINT ljl_36 = {.x = 11.195, .y = 16.03};
+	UPOINT ljl_37 = {.x = 11.615, .y = 16.29};
+	UPOINT ljl_38 = {.x = 11.91, .y = 16.4};
+	UPOINT ljl_39 = {.x = 11.8, .y = 16.76};
+	UPOINT ljl_40 = {.x = 11.7, .y = 16.62};
+	UPOINT ljl_41 = {.x = 11.55, .y = 16.88};
+	UPOINT ljl_42 = {.x = 11.36, .y = 16.81};
+	UPOINT ljl_43 = {.x = 11.3, .y = 17.01};
+	UPOINT ljl_44 = {.x = 11.18, .y = 17.2};
+	UPOINT ljl_45 = {.x = 11, .y = 17.41};
+	UPOINT ljl_46 = {.x = 11.065, .y = 17.68};
+	UPOINT ljl_47 = {.x = 10.96, .y = 17.935};
+	UPOINT ljl_48 = {.x = 11.1, .y = 18.24};
+	UPOINT ljl_49 = {.x = 11.1, .y = 18.49};
+	UPOINT ljl_50 = {.x = 10.99, .y = 18.52};
+	UPOINT ljl_51 = {.x = 10.97, .y = 18.66};
+	UPOINT ljl_52 = {.x = 10.54, .y = 18.56};
+	UPOINT ljl_53 = {.x = 10.31, .y = 18.565};
+	UPOINT ljl_54 = {.x = 10.19, .y = 18.71};
+	UPOINT ljl_55 = {.x = 10.09, .y = 18.95};//^^^ Puntarenas ^^^ vvv Guanacaste vvv
+	UPOINT ljl_56 = {.x = 10.19, .y = 19.31};
+	UPOINT ljl_57 = {.x = 10.11, .y = 19.47};
+	UPOINT ljl_58 = {.x = 10.19, .y = 19.65};
+	UPOINT ljl_59 = {.x = 10.13, .y = 20.2};
+	UPOINT ljl_60 = {.x = 9.71, .y = 20.5};
+	UPOINT ljl_61 = {.x = 9.41, .y = 20.68};
+	UPOINT ljl_62 = {.x = 9.06, .y = 20.8};
+	UPOINT ljl_63 = {.x = 8.69, .y = 21.16};
+	UPOINT ljl_64 = {.x = 8.2, .y = 21.99};
+	UPOINT ljl_65 = {.x = 7.46, .y = 22.15};
+	UPOINT ljl_66 = {.x = 7.18, .y = 22.32};
+	UPOINT ljl_67 = {.x = 6.35, .y = 22.34};
+	UPOINT ljl_68 = {.x = 6.18, .y = 22.55};
+	UPOINT ljl_69 = {.x = 6.05, .y = 22.72};
+	UPOINT ljl_70 = {.x = 5.55, .y = 22.96};
+	UPOINT ljl_71 = {.x = 5.085, .y = 23.46};
+	UPOINT ljl_72 = {.x = 5.18, .y = 23.54};
+	UPOINT ljl_73 = {.x = 5.5, .y = 23.6};
+	UPOINT ljl_74 = {.x = 5.49, .y = 23.9};
+	UPOINT ljl_75 = {.x = 5.62, .y = 24.29};
+	UPOINT ljl_76 = {.x = 5.87, .y = 24.4};
+	UPOINT ljl_77 = {.x = 6.3, .y = 24.2};
+	UPOINT ljl_78 = {.x = 6.42, .y = 24.29};
+	UPOINT ljl_79 = {.x = 6.4, .y = 24.5};//vvv Nicaragua vvv ^^^ Guanacaste ^^^
+
+//ALAJUELA
+UPOINT * alajuela[LEN_ALAJUELA] = {
+	&ljl_0, &ljl_1, &ljl_2, &ljl_3, &ljl_4, &ljl_5, &ljl_6, &ljl_7, &ljl_8, &ljl_9,
+	&ljl_10, &ljl_11, &ljl_12, &ljl_13, &ljl_14, &ljl_15, &ljl_16, &ljl_17, &ljl_18, &ljl_19,
+	&ljl_20, &ljl_21, &ljl_22, &ljl_23, &ljl_24, &ljl_25, &ljl_26, &ljl_27, &ljl_28, &ljl_29,
+	&ljl_30, &ljl_31, &ljl_32, &ljl_33, &ljl_34, &ljl_35, &ljl_36, &ljl_37, &ljl_38, &ljl_39,
+	&ljl_40, &ljl_41, &ljl_42, &ljl_43, &ljl_44, &ljl_45, &ljl_46, &ljl_47, &ljl_48, &ljl_49,
+	&ljl_50, &ljl_51, &ljl_52, &ljl_53, &ljl_54, &ljl_55, &ljl_56, &ljl_57, &ljl_58, &ljl_59,
+	&ljl_60, &ljl_61, &ljl_62, &ljl_63, &ljl_64, &ljl_65, &ljl_66, &ljl_67, &ljl_68, &ljl_69,
+	&ljl_70, &ljl_71, &ljl_72, &ljl_73, &ljl_74, &ljl_75, &ljl_76, &ljl_77, &ljl_78, &ljl_79
 };
 
 /*

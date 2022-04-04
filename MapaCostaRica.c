@@ -30,6 +30,10 @@ void display (void)
   PIX* puntosSanJose = malloc(LEN_SANJOSE * sizeof(PIX)); 
   convert_utop(sanJose, puntosSanJose, LEN_SANJOSE);
   paint_pol(puntosSanJose, LEN_SANJOSE);
+
+  PIX* puntosAlajuela = malloc(LEN_ALAJUELA * sizeof(PIX)); 
+  convert_utop(alajuela, puntosAlajuela, LEN_ALAJUELA);
+  paint_pol(puntosAlajuela, LEN_ALAJUELA);
   
   /*glClear (GL_COLOR_BUFFER_BIT);
 
