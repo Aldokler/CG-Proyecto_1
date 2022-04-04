@@ -34,6 +34,10 @@ void display (void)
   PIX* puntosAlajuela = malloc(LEN_ALAJUELA * sizeof(PIX)); 
   convert_utop(alajuela, puntosAlajuela, LEN_ALAJUELA);
   paint_pol(puntosAlajuela, LEN_ALAJUELA);
+
+  PIX* puntosGuanacaste = malloc(LEN_GUANACASTE * sizeof(PIX)); 
+  convert_utop(guanacaste, puntosGuanacaste, LEN_GUANACASTE);
+  paint_pol(puntosGuanacaste, LEN_GUANACASTE);
   
   /*glClear (GL_COLOR_BUFFER_BIT);
 

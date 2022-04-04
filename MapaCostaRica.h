@@ -12,6 +12,7 @@
 #define LEN_CARTAGO 55
 #define LEN_SANJOSE 119
 #define LEN_ALAJUELA 80
+#define LEN_GUANACASTE 141
 
 int len_x_universal = 28.41;
 int len_y_universal = 26.8;
@@ -577,6 +578,177 @@ UPOINT * alajuela[LEN_ALAJUELA] = {
 	&ljl_60, &ljl_61, &ljl_62, &ljl_63, &ljl_64, &ljl_65, &ljl_66, &ljl_67, &ljl_68, &ljl_69,
 	&ljl_70, &ljl_71, &ljl_72, &ljl_73, &ljl_74, &ljl_75, &ljl_76, &ljl_77, &ljl_78, &ljl_79
 };
+
+/*
+####################################################################################################################
+====================================================================================================================
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+====================================================================================================================
+####################################################################################################################
+*/
+
+//GUANACASTE
+	UPOINT gnc_0 = {.x = 3.21, .y = 24.73};//^^^ Nicaragua ^^^ vvv Pacifico vvv
+	UPOINT gnc_1 = {.x = 3.33, .y = 24.62};
+	UPOINT gnc_2 = {.x = 3.31, .y = 24.43};
+	UPOINT gnc_3 = {.x = 3.05, .y = 24.4};
+	UPOINT gnc_4 = {.x = 2.93, .y = 24.49};
+	UPOINT gnc_5 = {.x = 2.8, .y = 24.5};
+	UPOINT gnc_6 = {.x = 2.7, .y = 24.24};
+	UPOINT gnc_7 = {.x = 3.2, .y = 23.91};
+	UPOINT gnc_8 = {.x = 3.02, .y = 23.79};
+	UPOINT gnc_9 = {.x = 3.1, .y = 23.68};
+	UPOINT gnc_10 = {.x = 3.01, .y = 23.66};
+	UPOINT gnc_11 = {.x = 2.34, .y = 23.62};
+	UPOINT gnc_12 = {.x = 2.4, .y = 23.49};
+	UPOINT gnc_13 = {.x = 2.21, .y = 23.54};
+	UPOINT gnc_14 = {.x = 2.22, .y = 23.72};
+	UPOINT gnc_15 = {.x = 1.72, .y = 23.75};
+	UPOINT gnc_16 = {.x = 1.81, .y = 23.6};
+	UPOINT gnc_17 = {.x = 1.31, .y = 23.29};
+	UPOINT gnc_18 = {.x = 1.59, .y = 23.29};
+	UPOINT gnc_19 = {.x = 1.86, .y = 23.13};
+	UPOINT gnc_20 = {.x = 1.92, .y = 23.06};
+	UPOINT gnc_21 = {.x = 2.4, .y = 22.99};
+	UPOINT gnc_22 = {.x = 2.35, .y = 22.83};
+	UPOINT gnc_23 = {.x = 2.41, .y = 22.71};
+	UPOINT gnc_24 = {.x = 2.66, .y = 22.61};
+	UPOINT gnc_25 = {.x = 2.72, .y = 22.76};
+	UPOINT gnc_26 = {.x = 2.9, .y = 22.74};
+	UPOINT gnc_27 = {.x = 3.29, .y = 22.59};
+	UPOINT gnc_28 = {.x = 3.46, .y = 22.39};
+	UPOINT gnc_29 = {.x = 3.44, .y = 21.62};
+	UPOINT gnc_30 = {.x = 3.295, .y = 21.53};
+	UPOINT gnc_31 = {.x = 3.12, .y = 21.19};
+	UPOINT gnc_32 = {.x = 3.29, .y = 21.2};
+	UPOINT gnc_33 = {.x = 3.5, .y = 21.4};
+	UPOINT gnc_34 = {.x = 3.64, .y = 21.215};
+	UPOINT gnc_35 = {.x = 3.115, .y = 20.71};
+	UPOINT gnc_36 = {.x = 2.72, .y = 20.54};
+	UPOINT gnc_37 = {.x = 2.57, .y = 20.67};
+	UPOINT gnc_38 = {.x = 2.45, .y = 20.5};
+	UPOINT gnc_39 = {.x = 2.31, .y = 20.46};
+	UPOINT gnc_40 = {.x = 2.47, .y = 20.16};
+	UPOINT gnc_41 = {.x = 2.6, .y = 20.01};
+	UPOINT gnc_42 = {.x = 2.56, .y = 19.83};
+	UPOINT gnc_43 = {.x = 2.395, .y = 19.89};
+	UPOINT gnc_44 = {.x = 2.46, .y = 19.61};
+	UPOINT gnc_45 = {.x = 2.294, .y = 19.53};
+	UPOINT gnc_46 = {.x = 2.2, .y = 19.6};
+	UPOINT gnc_47 = {.x = 2, .y = 19.3};
+	UPOINT gnc_48 = {.x = 1.89, .y = 19.28};
+	UPOINT gnc_49 = {.x = 1.81, .y = 19.12};
+	UPOINT gnc_50 = {.x = 1.98, .y = 19.1};
+	UPOINT gnc_51 = {.x = 2.1, .y = 18.8};
+	UPOINT gnc_52 = {.x = 1.99, .y = 18.73};
+	UPOINT gnc_53 = {.x = 1.97, .y = 18.35};
+	UPOINT gnc_54 = {.x = 2.12, .y = 17.94};
+	UPOINT gnc_55 = {.x = 2.3, .y = 17.71};
+	UPOINT gnc_56 = {.x = 2.53, .y = 17.08};
+	UPOINT gnc_57 = {.x = 2.895, .y = 16.59};
+	UPOINT gnc_58 = {.x = 3.26, .y = 16.21};
+	UPOINT gnc_59 = {.x = 3.42, .y = 15.89};
+	UPOINT gnc_60 = {.x = 3.4, .y = 15.72};
+	UPOINT gnc_61 = {.x = 3.55, .y = 15.66};
+	UPOINT gnc_62 = {.x = 3.58, .y = 15.73};
+	UPOINT gnc_63 = {.x = 3.74, .y = 15.6};
+	UPOINT gnc_64 = {.x = 4.38, .y = 15.46};
+	UPOINT gnc_65 = {.x = 4.52, .y = 15.52};
+	UPOINT gnc_66 = {.x = 4.8, .y = 15.325};
+	UPOINT gnc_67 = {.x = 5, .y = 15.26};
+	UPOINT gnc_68 = {.x = 5.035, .y = 15.39};
+	UPOINT gnc_69 = {.x = 5.29, .y = 15.295};
+	UPOINT gnc_70 = {.x = 5.5, .y = 15.31};
+	UPOINT gnc_71 = {.x = 5.92, .y = 15.02};
+	UPOINT gnc_72 = {.x = 6.12, .y = 15.02};
+	UPOINT gnc_73 = {.x = 6.49, .y = 14.7};
+	UPOINT gnc_74 = {.x = 6.4, .y = 14.57};
+	UPOINT gnc_75 = {.x = 6.63, .y = 14.51};
+	UPOINT gnc_76 = {.x = 6.8, .y = 14.31};//vvv Puntarenas vvv ^^^ Pacifico ^^^
+	UPOINT gnc_77 = {.x = 7, .y = 14.53};
+	UPOINT gnc_78 = {.x = 7.12, .y = 15.22};
+	UPOINT gnc_79 = {.x = 6.88, .y = 15.61};
+	UPOINT gnc_80 = {.x = 6.3, .y = 15.81};
+	UPOINT gnc_81 = {.x = 6.31, .y = 16.08};
+	UPOINT gnc_82 = {.x = 6.71, .y = 16.03};
+	UPOINT gnc_83 = {.x = 7.78, .y = 16.25};
+	UPOINT gnc_84 = {.x = 7.77, .y = 16.52};
+	UPOINT gnc_85 = {.x = 7.8, .y = 16.59};//^^^ Puntarenas  ^^^ vvv Golfo de Nicoya vvv
+	UPOINT gnc_86 = {.x = 7.01, .y = 16.82};
+	UPOINT gnc_87 = {.x = 7, .y = 17.1};
+	UPOINT gnc_88 = {.x = 6.69, .y = 17.305};
+	UPOINT gnc_89 = {.x = 6.63, .y = 17.41};
+	UPOINT gnc_90 = {.x = 6.7, .y = 17.42};
+	UPOINT gnc_91 = {.x = 6.59, .y = 17.7};
+	UPOINT gnc_92 = {.x = 6.63, .y = 18.38};
+	UPOINT gnc_93 = {.x = 6.835, .y = 17.88};
+	UPOINT gnc_94 = {.x = 7.42, .y = 17.71};
+	UPOINT gnc_95 = {.x = 7.53, .y = 17.81};
+	UPOINT gnc_96 = {.x = 7.7, .y = 17.79};
+	UPOINT gnc_97 = {.x = 7.87, .y = 17.56};//vvv Puntarenas vvv ^^^ Golfo de Nicoya ^^^
+	UPOINT gnc_98 = {.x = 8.03, .y = 17.7};
+	UPOINT gnc_99 = {.x = 8.63, .y = 17.64};
+	UPOINT gnc_100 = {.x = 8.9, .y = 17.405};
+	UPOINT gnc_101 = {.x = 9.06, .y = 17.41};
+	UPOINT gnc_102 = {.x = 9, .y = 17.6};
+	UPOINT gnc_103 = {.x = 9.27, .y = 17.86};
+	UPOINT gnc_104 = {.x = 9.39, .y = 17.84};
+	UPOINT gnc_105 = {.x = 9.4, .y = 18};
+	UPOINT gnc_106 = {.x = 9.33, .y = 18.1};
+	UPOINT gnc_107 = {.x = 9.44, .y = 18.31};
+	UPOINT gnc_108 = {.x = 9.5, .y = 18.92};
+	UPOINT gnc_109 = {.x = 9.79, .y = 19.02};
+	UPOINT gnc_110 = {.x = 10.09, .y = 18.95};//^^^ Puntarenas ^^^ vvv Alajuela vvv
+	UPOINT gnc_111 = {.x = 10.19, .y = 19.31};
+	UPOINT gnc_112 = {.x = 10.11, .y = 19.47};
+	UPOINT gnc_113 = {.x = 10.19, .y = 19.65};
+	UPOINT gnc_114 = {.x = 10.13, .y = 20.2};
+	UPOINT gnc_115 = {.x = 9.71, .y = 20.5};
+	UPOINT gnc_116 = {.x = 9.41, .y = 20.68};
+	UPOINT gnc_117 = {.x = 9.06, .y = 20.8};
+	UPOINT gnc_118 = {.x = 8.69, .y = 21.16};
+	UPOINT gnc_119 = {.x = 8.2, .y = 21.99};
+	UPOINT gnc_120 = {.x = 7.46, .y = 22.15};
+	UPOINT gnc_121 = {.x = 7.18, .y = 22.32};
+	UPOINT gnc_122 = {.x = 6.35, .y = 22.34};
+	UPOINT gnc_123 = {.x = 6.18, .y = 22.55};
+	UPOINT gnc_124 = {.x = 6.05, .y = 22.72};
+	UPOINT gnc_125 = {.x = 5.55, .y = 22.96};
+	UPOINT gnc_126 = {.x = 5.085, .y = 23.46};
+	UPOINT gnc_127 = {.x = 5.18, .y = 23.54};
+	UPOINT gnc_128 = {.x = 5.5, .y = 23.6};
+	UPOINT gnc_129 = {.x = 5.49, .y = 23.9};
+	UPOINT gnc_130 = {.x = 5.62, .y = 24.29};
+	UPOINT gnc_131 = {.x = 5.87, .y = 24.4};
+	UPOINT gnc_132 = {.x = 6.3, .y = 24.2};
+	UPOINT gnc_133 = {.x = 6.42, .y = 24.29};
+	UPOINT gnc_134 = {.x = 6.4, .y = 24.5};
+	UPOINT gnc_135 = {.x = 6.7, .y = 24.72};//vvv Nicaragua vvv ^^^ Alajuela ^^^
+	UPOINT gnc_136 = {.x = 5.72, .y = 26.8-1.65};
+	UPOINT gnc_137 = {.x = 5.19, .y = 26.8-1.63};
+	UPOINT gnc_138 = {.x = 4.68, .y = 26.8-1.42};
+	UPOINT gnc_139 = {.x = 4.29, .y = 26.8-1.085};
+	UPOINT gnc_140 = {.x = 3.81, .y = 26.8-1};
+
+//GUANACASTE
+UPOINT * guanacaste[LEN_GUANACASTE] = {
+	&gnc_0, &gnc_1, &gnc_2, &gnc_3, &gnc_4, &gnc_5, &gnc_6, &gnc_7, &gnc_8, &gnc_9,
+	&gnc_10, &gnc_11, &gnc_12, &gnc_13, &gnc_14, &gnc_15, &gnc_16, &gnc_17, &gnc_18, &gnc_19,
+	&gnc_20, &gnc_21, &gnc_22, &gnc_23, &gnc_24, &gnc_25, &gnc_26, &gnc_27, &gnc_28, &gnc_29,
+	&gnc_30, &gnc_31, &gnc_32, &gnc_33, &gnc_34, &gnc_35, &gnc_36, &gnc_37, &gnc_38, &gnc_39,
+	&gnc_40, &gnc_41, &gnc_42, &gnc_43, &gnc_44, &gnc_45, &gnc_46, &gnc_47, &gnc_48, &gnc_49,
+	&gnc_50, &gnc_51, &gnc_52, &gnc_53, &gnc_54, &gnc_55, &gnc_56, &gnc_57, &gnc_58, &gnc_59,
+	&gnc_60, &gnc_61, &gnc_62, &gnc_63, &gnc_64, &gnc_65, &gnc_66, &gnc_67, &gnc_68, &gnc_69,
+	&gnc_70, &gnc_71, &gnc_72, &gnc_73, &gnc_74, &gnc_75, &gnc_76, &gnc_77, &gnc_78, &gnc_79,
+	&gnc_80, &gnc_81, &gnc_82, &gnc_83, &gnc_84, &gnc_85, &gnc_86, &gnc_87, &gnc_88, &gnc_89,
+	&gnc_90, &gnc_91, &gnc_92, &gnc_93, &gnc_94, &gnc_95, &gnc_96, &gnc_97, &gnc_98, &gnc_99,
+	&gnc_100, &gnc_101, &gnc_102, &gnc_103, &gnc_104, &gnc_105, &gnc_106, &gnc_107, &gnc_108, &gnc_109,
+	&gnc_110, &gnc_111, &gnc_112, &gnc_113, &gnc_114, &gnc_115, &gnc_116, &gnc_117, &gnc_118, &gnc_119,
+	&gnc_120, &gnc_121, &gnc_122, &gnc_123, &gnc_124, &gnc_125, &gnc_126, &gnc_127, &gnc_128, &gnc_129,
+	&gnc_130, &gnc_131, &gnc_132, &gnc_133, &gnc_134, &gnc_135, &gnc_136, &gnc_137, &gnc_138, &gnc_139,
+	&gnc_140
+}; 
 
 /*
 ####################################################################################################################
