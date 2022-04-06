@@ -38,6 +38,14 @@ void display (void)
   PIX* puntosGuanacaste = malloc(LEN_GUANACASTE * sizeof(PIX)); 
   convert_utop(guanacaste, puntosGuanacaste, LEN_GUANACASTE);
   paint_pol(puntosGuanacaste, LEN_GUANACASTE);
+
+  PIX* puntosPuntarenas = malloc(LEN_PUNTARENAS * sizeof(PIX)); 
+  convert_utop(puntarenas, puntosPuntarenas, LEN_PUNTARENAS);
+  paint_pol(puntosPuntarenas, LEN_PUNTARENAS);
+
+  PIX* puntosPuntarenasB = malloc(LEN_PUNTARENASB * sizeof(PIX)); 
+  convert_utop(puntarenasB, puntosPuntarenasB, LEN_PUNTARENASB);
+  paint_pol(puntosPuntarenasB, LEN_PUNTARENASB);
   
   /*glClear (GL_COLOR_BUFFER_BIT);
 

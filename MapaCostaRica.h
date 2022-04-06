@@ -13,6 +13,8 @@
 #define LEN_SANJOSE 119
 #define LEN_ALAJUELA 80
 #define LEN_GUANACASTE 141
+#define LEN_PUNTARENAS 254
+#define LEN_PUNTARENASB 35
 
 int len_x_universal = 28.41;
 int len_y_universal = 26.8;
@@ -672,9 +674,9 @@ UPOINT * alajuela[LEN_ALAJUELA] = {
 	UPOINT gnc_80 = {.x = 6.3, .y = 15.81};
 	UPOINT gnc_81 = {.x = 6.31, .y = 16.08};
 	UPOINT gnc_82 = {.x = 6.71, .y = 16.03};
-	UPOINT gnc_83 = {.x = 7.78, .y = 16.25};
-	UPOINT gnc_84 = {.x = 7.77, .y = 16.52};
-	UPOINT gnc_85 = {.x = 7.8, .y = 16.59};//^^^ Puntarenas  ^^^ vvv Golfo de Nicoya vvv
+	UPOINT gnc_83 = {.x = 7.28, .y = 16.25};
+	UPOINT gnc_84 = {.x = 7.27, .y = 16.52};
+	UPOINT gnc_85 = {.x = 7.3, .y = 16.59};//^^^ Puntarenas  ^^^ vvv Golfo de Nicoya vvv
 	UPOINT gnc_86 = {.x = 7.01, .y = 16.82};
 	UPOINT gnc_87 = {.x = 7, .y = 17.1};
 	UPOINT gnc_88 = {.x = 6.69, .y = 17.305};
@@ -748,6 +750,355 @@ UPOINT * guanacaste[LEN_GUANACASTE] = {
 	&gnc_120, &gnc_121, &gnc_122, &gnc_123, &gnc_124, &gnc_125, &gnc_126, &gnc_127, &gnc_128, &gnc_129,
 	&gnc_130, &gnc_131, &gnc_132, &gnc_133, &gnc_134, &gnc_135, &gnc_136, &gnc_137, &gnc_138, &gnc_139,
 	&gnc_140
+}; 
+
+/*
+####################################################################################################################
+====================================================================================================================
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+====================================================================================================================
+####################################################################################################################
+*/
+
+//PUNTARENAS
+	UPOINT ptr_0 = {.x = 24.24, .y = 9.58};//^^^ Limon ^^^ vvv Panama vvv
+	UPOINT ptr_1 = {.x = 24.56, .y = 9.59};
+	UPOINT ptr_2 = {.x = 28.41-3.63, .y = 9.34};
+	UPOINT ptr_3 = {.x = 28.41-3.35, .y = 9.19};
+	UPOINT ptr_4 = {.x = 28.41-3.15, .y = 9};
+	UPOINT ptr_5 = {.x = 28.41-2.71, .y = 8.86};
+	UPOINT ptr_6 = {.x = 28.41-2.51, .y = 8.55};
+	UPOINT ptr_7 = {.x = 28.41-2.49, .y = 8.3};
+	UPOINT ptr_8 = {.x = 28.41-2.675, .y = 8.21};
+	UPOINT ptr_8_5 = {.x = 28.41-2.8, .y = 8.01};
+	UPOINT ptr_9 = {.x = 28.41-3.16, .y = 8};
+	UPOINT ptr_10 = {.x = 28.41-3.34, .y = 7.81};
+	UPOINT ptr_11 = {.x = 28.41-3.65, .y = 7.7};
+	UPOINT ptr_12 = {.x = 28.41-3.55, .y = 7.5};
+	UPOINT ptr_13 = {.x = 28.41-3.7, .y = 7.36};
+	UPOINT ptr_14 = {.x = 28.41-3.71, .y = 7.22};
+	UPOINT ptr_15 = {.x = 28.41-3.91, .y = 7.2};
+	UPOINT ptr_16 = {.x = 28.41-4, .y = 7};
+	UPOINT ptr_17 = {.x = 28.41-3.61, .y = 6.55};
+	UPOINT ptr_18 = {.x = 28.41-3.59, .y = 6.31};
+	UPOINT ptr_19 = {.x = 28.41-3.365, .y = 6.09};
+	UPOINT ptr_20 = {.x = 28.41-3.32, .y = 5.22};
+	UPOINT ptr_21 = {.x = 28.41-3.68, .y = 4.62};
+	UPOINT ptr_22 = {.x = 28.41-4.06, .y = 4.64};
+	UPOINT ptr_23 = {.x = 28.41-4.21, .y = 4.45};
+	UPOINT ptr_24 = {.x = 28.41-4.56, .y = 4.02};
+	UPOINT ptr_25 = {.x = 28.41-4.81, .y = 3.95};
+	UPOINT ptr_26 = {.x = 28.41-4.935, .y = 3.73};
+	UPOINT ptr_27 = {.x = 28.41-4.51, .y = 3.35};
+	UPOINT ptr_28 = {.x = 28.41-4.395, .y = 3.37};
+	UPOINT ptr_29 = {.x = 28.41-4.11, .y = 3.2};
+	UPOINT ptr_30 = {.x = 28.41-3.73, .y = 1.95};
+	UPOINT ptr_31 = {.x = 28.41-3.86, .y = 1.5};//vvv Golfo vvv ^^^ Panama ^^^
+	UPOINT ptr_32 = {.x = 28.41-4, .y = 1.74};
+	UPOINT ptr_33 = {.x = 24.52, .y = 2};
+	UPOINT ptr_34 = {.x = 24.135, .y = 2.81};
+	UPOINT ptr_35 = {.x = 23.62, .y = 3.32};
+	UPOINT ptr_36 = {.x = 22.85, .y = 3.75};
+	UPOINT ptr_37 = {.x = 22.65, .y = 3.96};
+	UPOINT ptr_38 = {.x = 22.7, .y = 4.23};
+	UPOINT ptr_39 = {.x = 22.89, .y = 4.35};
+	UPOINT ptr_40 = {.x = 23.02, .y = 4.7};
+	UPOINT ptr_41 = {.x = 22.65, .y = 5.38};
+	UPOINT ptr_42 = {.x = 22.85, .y = 5.46};
+	UPOINT ptr_43 = {.x = 22.65, .y = 5.48};
+	UPOINT ptr_44 = {.x = 22.39, .y = 5.89};
+	UPOINT ptr_45 = {.x = 22.55, .y = 5.87};
+	UPOINT ptr_46 = {.x = 22.51, .y = 5.72};
+	UPOINT ptr_47 = {.x = 22.79, .y = 5.8};
+	UPOINT ptr_48 = {.x = 22.37, .y = 6.13};
+	UPOINT ptr_49 = {.x = 22.38, .y = 6.02};
+	UPOINT ptr_50 = {.x = 22.1, .y = 6.06};
+	UPOINT ptr_51 = {.x = 22, .y = 6.16};
+	UPOINT ptr_52 = {.x = 21.935, .y = 6.1};
+	UPOINT ptr_53 = {.x = 21.77, .y = 6.28};
+	UPOINT ptr_54 = {.x = 21.49, .y = 6.29};
+	UPOINT ptr_55 = {.x = 21.21, .y = 6.41};
+	UPOINT ptr_56 = {.x = 21.2, .y = 6.64};
+	UPOINT ptr_57 = {.x = 21.29, .y = 6.8};
+	UPOINT ptr_58 = {.x = 20.87, .y = 6.9};
+	UPOINT ptr_59 = {.x = 20.62, .y = 6.82};
+	UPOINT ptr_60 = {.x = 20.5, .y = 6.7};
+	UPOINT ptr_61 = {.x = 20.26, .y = 6.78};
+	UPOINT ptr_62 = {.x = 20.11, .y = 6.69};
+	UPOINT ptr_63 = {.x = 20.28, .y = 6.52};
+	UPOINT ptr_64 = {.x = 20.46, .y = 6.29};
+	UPOINT ptr_65 = {.x = 20.45, .y = 6.1};
+	UPOINT ptr_66 = {.x = 20.9, .y = 5.61};
+	UPOINT ptr_67 = {.x = 21.22, .y = 5.6};
+	UPOINT ptr_68 = {.x = 21.55, .y = 5.35};
+	UPOINT ptr_69 = {.x = 21.51, .y = 5.02};
+	UPOINT ptr_70 = {.x = 21.69, .y = 4.79};
+	UPOINT ptr_71 = {.x = 21.6, .y = 4.68};
+	UPOINT ptr_72 = {.x = 21.7, .y = 4.5};
+	UPOINT ptr_73 = {.x = 21.6, .y = 4.1};//^^^ Golfo ^^^ vvv Bahía vvv
+	UPOINT ptr_74 = {.x = 20.68, .y = 4.45};
+	UPOINT ptr_75 = {.x = 20.1, .y = 4.63};
+	UPOINT ptr_76 = {.x = 19.5, .y = 4.6};
+	UPOINT ptr_77 = {.x = 18.41, .y = 5.62};
+	UPOINT ptr_78 = {.x = 18.25, .y = 5.7};
+	UPOINT ptr_79 = {.x = 18.19, .y = 5.9};
+	UPOINT ptr_80 = {.x = 18.25, .y = 6.11};
+	UPOINT ptr_81 = {.x = 18.44, .y = 6.45};
+	UPOINT ptr_82 = {.x = 18.7, .y = 6.47};
+	UPOINT ptr_83 = {.x = 18.86, .y = 6.81};
+	UPOINT ptr_84 = {.x = 18.85, .y = 7.1};
+	UPOINT ptr_85 = {.x = 19.1, .y = 7.29};
+	UPOINT ptr_86 = {.x = 19.38, .y = 7.35};
+	UPOINT ptr_87 = {.x = 19.12, .y = 7.4};
+	UPOINT ptr_88 = {.x = 18.92, .y = 7.21};
+	UPOINT ptr_89 = {.x = 18.81, .y = 7.34};
+	UPOINT ptr_90 = {.x = 18.9, .y = 7.48};
+	UPOINT ptr_91 = {.x = 19.2, .y = 7.66};
+	UPOINT ptr_92 = {.x = 19.38, .y = 7.73};
+	UPOINT ptr_93 = {.x = 19.05, .y = 7.89};
+	UPOINT ptr_94 = {.x = 19.025, .y = 8.05};
+	UPOINT ptr_95 = {.x = 19.34, .y = 8.03};
+	UPOINT ptr_96 = {.x = 19, .y = 8.3};
+	UPOINT ptr_97 = {.x = 18.94, .y = 9.2};
+	UPOINT ptr_98 = {.x = 18.69, .y = 9.39};
+	UPOINT ptr_99 = {.x = 18.06, .y = 10.05};
+	UPOINT ptr_100 = {.x = 17.9, .y = 10.01};//vvv Pacifico vvv ^^^ Bahía ^^^
+	UPOINT ptr_101 = {.x = 17.88, .y = 10.23};
+	UPOINT ptr_102 = {.x = 17.33, .y = 10.6};
+	UPOINT ptr_103 = {.x = 17.11, .y = 10.81};
+	UPOINT ptr_104 = {.x = 16.6, .y = 11.2};
+	UPOINT ptr_105 = {.x = 15.79, .y = 11.51};
+	UPOINT ptr_106 = {.x = 15.18, .y = 11.7};
+	UPOINT ptr_107 = {.x = 15.1, .y = 11.75};
+	UPOINT ptr_108 = {.x = 14.99, .y = 11.72};
+	UPOINT ptr_109 = {.x = 15, .y = 11.84};
+	UPOINT ptr_110 = {.x = 14.75, .y = 11.9};
+	UPOINT ptr_111 = {.x = 14.86, .y = 11.99};
+	UPOINT ptr_112 = {.x = 14.81, .y = 12.2};
+	UPOINT ptr_113 = {.x = 14.59, .y = 12.32};
+	UPOINT ptr_114 = {.x = 14.1, .y = 12.49};
+	UPOINT ptr_115 = {.x = 13.61, .y = 12.64};
+	UPOINT ptr_116 = {.x = 13.49, .y = 12.62};
+	UPOINT ptr_117 = {.x = 12.28, .y = 12.9};
+	UPOINT ptr_118 = {.x = 12.08, .y = 12.81};
+	UPOINT ptr_119 = {.x = 11.43, .y = 13.29};
+	UPOINT ptr_120 = {.x = 11.35, .y = 13.5};
+	UPOINT ptr_121 = {.x = 11.1, .y = 13.64};
+	UPOINT ptr_122 = {.x = 11.13, .y = 13.81};
+	UPOINT ptr_123 = {.x = 10.92, .y = 13.83};
+	UPOINT ptr_124 = {.x = 11, .y = 13.95};
+	UPOINT ptr_125 = {.x = 10.98, .y = 14.12};
+	UPOINT ptr_126 = {.x = 11.12, .y = 14.4};
+	UPOINT ptr_127 = {.x = 11.29, .y = 14.62};
+	UPOINT ptr_128 = {.x = 10.69, .y = 15.5};
+	UPOINT ptr_129 = {.x = 10.51, .y = 15.62};
+	UPOINT ptr_130 = {.x = 10.66, .y = 15.89};
+	UPOINT ptr_131 = {.x = 10.5, .y = 15.98};
+	UPOINT ptr_132 = {.x = 10.4, .y = 16.22};
+	UPOINT ptr_133 = {.x = 9.62, .y = 16.18};
+	UPOINT ptr_134 = {.x = 10.02, .y = 16.36};
+	UPOINT ptr_135 = {.x = 9.4, .y = 16.5};
+	UPOINT ptr_136 = {.x = 9.09, .y = 16.74};
+	UPOINT ptr_137 = {.x = 8.99, .y = 16.78};
+	UPOINT ptr_138 = {.x = 8.86, .y = 16.96};
+	UPOINT ptr_139 = {.x = 8.71, .y = 16.99};
+	UPOINT ptr_140 = {.x = 8.79, .y = 17.11};
+	UPOINT ptr_141 = {.x = 8.3, .y = 17.45};
+	UPOINT ptr_142 = {.x = 8.11, .y = 17.55};
+	UPOINT ptr_143 = {.x = 8.01, .y = 17.5};
+	UPOINT ptr_144 = {.x = 7.87, .y = 17.56};//vvv Guanacaste vvv ^^^ Pacifico ^^^
+	UPOINT ptr_145 = {.x = 8.03, .y = 17.7};
+	UPOINT ptr_146 = {.x = 8.63, .y = 17.64};
+	UPOINT ptr_147 = {.x = 8.9, .y = 17.405};
+	UPOINT ptr_148 = {.x = 9.06, .y = 17.41};
+	UPOINT ptr_149 = {.x = 9, .y = 17.6};
+	UPOINT ptr_150 = {.x = 9.27, .y = 17.86};
+	UPOINT ptr_151 = {.x = 9.39, .y = 17.84};
+	UPOINT ptr_152 = {.x = 9.4, .y = 18};
+	UPOINT ptr_153 = {.x = 9.33, .y = 18.1};
+	UPOINT ptr_154 = {.x = 9.44, .y = 18.31};
+	UPOINT ptr_155 = {.x = 9.5, .y = 18.92};
+	UPOINT ptr_156 = {.x = 9.79, .y = 19.02};
+	UPOINT ptr_157 = {.x = 10.09, .y = 18.95};//^^^ Guanacaste ^^^ vvv Alajuela vvv
+	UPOINT ptr_158 = {.x = 10.19, .y = 18.71};
+	UPOINT ptr_159 = {.x = 10.31, .y = 18.565};
+	UPOINT ptr_160 = {.x = 10.54, .y = 18.56};
+	UPOINT ptr_161 = {.x = 10.97, .y = 18.66};
+	UPOINT ptr_162 = {.x = 10.99, .y = 18.52};
+	UPOINT ptr_163 = {.x = 11.1, .y = 18.49};
+	UPOINT ptr_164 = {.x = 11.1, .y = 18.24};
+	UPOINT ptr_165 = {.x = 10.96, .y = 17.935};
+	UPOINT ptr_166 = {.x = 11.065, .y = 17.68};
+	UPOINT ptr_167 = {.x = 11, .y = 17.41};
+	UPOINT ptr_168 = {.x = 11.18, .y = 17.2};
+	UPOINT ptr_169 = {.x = 11.3, .y = 17.01};
+	UPOINT ptr_170 = {.x = 11.36, .y = 16.81};
+	UPOINT ptr_171 = {.x = 11.55, .y = 16.88};
+	UPOINT ptr_172 = {.x = 11.7, .y = 16.62};
+	UPOINT ptr_173 = {.x = 11.8, .y = 16.76};
+	UPOINT ptr_174 = {.x = 11.91, .y = 16.4};
+	UPOINT ptr_175 = {.x = 11.615, .y = 16.29};
+	UPOINT ptr_176 = {.x = 11.195, .y = 16.03};
+	UPOINT ptr_177 = {.x = 11.09, .y = 15.82};
+	UPOINT ptr_178 = {.x = 10.92, .y = 15.79};
+	UPOINT ptr_179 = {.x = 10.93, .y = 15.59};
+	UPOINT ptr_180 = {.x = 11.21, .y = 15.48};
+	UPOINT ptr_181 = {.x = 11.5, .y = 15.49};
+	UPOINT ptr_182 = {.x = 11.8, .y = 15.21};//vvv San Jose vvv ^^^ Alajuela ^^^
+	UPOINT ptr_183 = {.x = 11.79, .y = 15.06};
+	UPOINT ptr_184 = {.x = 11.81, .y = 14.86};
+	UPOINT ptr_185 = {.x = 12, .y = 14.79};
+	UPOINT ptr_186 = {.x = 11.93, .y = 14.66};
+	UPOINT ptr_187 = {.x = 11.68, .y = 14.59};
+	UPOINT ptr_188 = {.x = 11.6, .y = 14.49};
+	UPOINT ptr_189 = {.x = 11.7, .y = 14.22};
+	UPOINT ptr_190 = {.x = 11.66, .y = 14.02};
+	UPOINT ptr_191 = {.x = 11.94, .y = 13.65};
+	UPOINT ptr_192 = {.x = 12.06, .y = 13.2};
+	UPOINT ptr_193 = {.x = 12.39, .y = 13.19};
+	UPOINT ptr_194 = {.x = 12.49, .y = 13.23};
+	UPOINT ptr_195 = {.x = 12.58, .y = 13.21};
+	UPOINT ptr_196 = {.x = 12.67, .y = 13.3};
+	UPOINT ptr_197 = {.x = 12.84, .y = 13.19};
+	UPOINT ptr_198 = {.x = 13.1, .y = 13.37};
+	UPOINT ptr_199 = {.x = 13.19, .y = 13.75};
+	UPOINT ptr_200 = {.x = 13.55, .y = 13.8};
+	UPOINT ptr_201 = {.x = 13.94, .y = 13.78};
+	UPOINT ptr_202 = {.x = 14.07, .y = 13.699};
+	UPOINT ptr_203 = {.x = 14.45, .y = 13.65};
+	UPOINT ptr_204 = {.x = 14.8, .y = 13.7};
+	UPOINT ptr_205 = {.x = 15.02, .y = 13.64};
+	UPOINT ptr_206 = {.x = 15.06, .y = 13.535};
+	UPOINT ptr_207 = {.x = 15, .y = 13.38};
+	UPOINT ptr_208 = {.x = 15.1, .y = 13.2};
+	UPOINT ptr_209 = {.x = 15.385, .y = 13.25};
+	UPOINT ptr_210 = {.x = 15.6, .y = 13.07};
+	UPOINT ptr_211 = {.x = 15.59, .y = 12.82};
+	UPOINT ptr_212 = {.x = 16.27, .y = 12.31};
+	UPOINT ptr_213 = {.x = 16.28, .y = 12.19};
+	UPOINT ptr_214 = {.x = 16.65, .y = 11.85};
+	UPOINT ptr_215 = {.x = 16.7, .y = 12};
+	UPOINT ptr_216 = {.x = 16.91, .y = 11.91};
+	UPOINT ptr_217 = {.x = 17.02, .y = 11.61};
+	UPOINT ptr_218 = {.x = 17.3, .y = 11.48};
+	UPOINT ptr_219 = {.x = 17.24, .y = 11};
+	UPOINT ptr_220 = {.x = 17.7, .y = 10.6};
+	UPOINT ptr_221 = {.x = 18, .y = 10.699};
+	UPOINT ptr_222 = {.x = 18.045, .y = 10.94};
+	UPOINT ptr_223 = {.x = 18.565, .y = 10.42};
+	UPOINT ptr_224 = {.x = 18.72, .y = 10};
+	UPOINT ptr_225 = {.x = 19.15, .y = 9.835};
+	UPOINT ptr_226 = {.x = 19.46, .y = 9.57};
+	UPOINT ptr_227 = {.x = 19.87, .y = 9.56};
+	UPOINT ptr_228 = {.x = 20.18, .y = 10.09};
+	UPOINT ptr_229 = {.x = 20.07, .y = 10.39};
+	UPOINT ptr_230 = {.x = 19.89, .y = 10.4};
+	UPOINT ptr_231 = {.x = 19.72, .y = 10.51};
+	UPOINT ptr_232 = {.x = 19.87, .y = 10.9};
+	UPOINT ptr_233 = {.x = 20.01, .y = 11};
+	UPOINT ptr_234 = {.x = 20.05, .y = 11.17};
+	UPOINT ptr_235 = {.x = 20.24, .y = 11.45};
+	UPOINT ptr_236 = {.x = 20.41, .y = 11.7};//^^^ San Jose ^^^ vvv Limon vvv
+	UPOINT ptr_237 = {.x = 20.6, .y = 11.73};
+	UPOINT ptr_238 = {.x = 20.68, .y = 11.52};
+	UPOINT ptr_239 = {.x = 20.83, .y = 11.61};
+	UPOINT ptr_240 = {.x = 21.09, .y = 11.6};
+	UPOINT ptr_241 = {.x = 21.17, .y = 11.8};
+	UPOINT ptr_242 = {.x = 21.36, .y = 11.85};
+	UPOINT ptr_243 = {.x = 21.6, .y = 11.64};
+	UPOINT ptr_244 = {.x = 22.08, .y = 11.4};
+	UPOINT ptr_245 = {.x = 22.43, .y = 11.47};
+	UPOINT ptr_246 = {.x = 22.71, .y = 11.08};
+	UPOINT ptr_247 = {.x = 23.23, .y = 10.79};
+	UPOINT ptr_248 = {.x = 23.24, .y = 10.6};
+	UPOINT ptr_249 = {.x = 23.35, .y = 10.45};
+	UPOINT ptr_250 = {.x = 23.33, .y = 10.23};
+	UPOINT ptr_251 = {.x = 23.8, .y = 10.13};
+	UPOINT ptr_252 = {.x = 23.95, .y = 9.69};
+
+//PUNTARENAS
+UPOINT * puntarenas[LEN_PUNTARENAS] = {
+	&ptr_0, &ptr_1, &ptr_2, &ptr_3, &ptr_4, &ptr_5, &ptr_6, &ptr_7, &ptr_8, &ptr_8_5, &ptr_9,
+	&ptr_10, &ptr_11, &ptr_12, &ptr_13, &ptr_14, &ptr_15, &ptr_16, &ptr_17, &ptr_18, &ptr_19,
+	&ptr_20, &ptr_21, &ptr_22, &ptr_23, &ptr_24, &ptr_25, &ptr_26, &ptr_27, &ptr_28, &ptr_29,
+	&ptr_30, &ptr_31, &ptr_32, &ptr_33, &ptr_34, &ptr_35, &ptr_36, &ptr_37, &ptr_38, &ptr_39,
+	&ptr_40, &ptr_41, &ptr_42, &ptr_43, &ptr_44, &ptr_45, &ptr_46, &ptr_47, &ptr_48, &ptr_49,
+	&ptr_50, &ptr_51, &ptr_52, &ptr_53, &ptr_54, &ptr_55, &ptr_56, &ptr_57, &ptr_58, &ptr_59,
+	&ptr_60, &ptr_61, &ptr_62, &ptr_63, &ptr_64, &ptr_65, &ptr_66, &ptr_67, &ptr_68, &ptr_69,
+	&ptr_70, &ptr_71, &ptr_72, &ptr_73, &ptr_74, &ptr_75, &ptr_76, &ptr_77, &ptr_78, &ptr_79,
+	&ptr_80, &ptr_81, &ptr_82, &ptr_83, &ptr_84, &ptr_85, &ptr_86, &ptr_87, &ptr_88, &ptr_89,
+	&ptr_90, &ptr_91, &ptr_92, &ptr_93, &ptr_94, &ptr_95, &ptr_96, &ptr_97, &ptr_98, &ptr_99,
+	&ptr_100, &ptr_101, &ptr_102, &ptr_103, &ptr_104, &ptr_105, &ptr_106, &ptr_107, &ptr_108, &ptr_109,
+	&ptr_110, &ptr_111, &ptr_112, &ptr_113, &ptr_114, &ptr_115, &ptr_116, &ptr_117, &ptr_118, &ptr_119,
+	&ptr_120, &ptr_121, &ptr_122, &ptr_123, &ptr_124, &ptr_125, &ptr_126, &ptr_127, &ptr_128, &ptr_129,
+	&ptr_130, &ptr_131, &ptr_132, &ptr_133, &ptr_134, &ptr_135, &ptr_136, &ptr_137, &ptr_138, &ptr_139,
+	&ptr_140, &ptr_141, &ptr_142, &ptr_143, &ptr_144, &ptr_145, &ptr_146, &ptr_147, &ptr_148, &ptr_149,
+	&ptr_150, &ptr_151, &ptr_152, &ptr_153, &ptr_154, &ptr_155, &ptr_156, &ptr_157, &ptr_158, &ptr_159,
+	&ptr_160, &ptr_161, &ptr_162, &ptr_163, &ptr_164, &ptr_165, &ptr_166, &ptr_167, &ptr_168, &ptr_169,
+	&ptr_170, &ptr_171, &ptr_172, &ptr_173, &ptr_174, &ptr_175, &ptr_176, &ptr_177, &ptr_178, &ptr_179,
+	&ptr_180, &ptr_181, &ptr_182, &ptr_183, &ptr_184, &ptr_185, &ptr_186, &ptr_187, &ptr_188, &ptr_189,
+	&ptr_190, &ptr_191, &ptr_192, &ptr_193, &ptr_194, &ptr_195, &ptr_196, &ptr_197, &ptr_198, &ptr_199,
+	&ptr_200, &ptr_201, &ptr_202, &ptr_203, &ptr_204, &ptr_205, &ptr_206, &ptr_207, &ptr_208, &ptr_209,
+	&ptr_210, &ptr_211, &ptr_212, &ptr_213, &ptr_214, &ptr_215, &ptr_216, &ptr_217, &ptr_218, &ptr_219,
+	&ptr_220, &ptr_221, &ptr_222, &ptr_223, &ptr_224, &ptr_225, &ptr_226, &ptr_227, &ptr_228, &ptr_229,
+	&ptr_230, &ptr_231, &ptr_232, &ptr_233, &ptr_234, &ptr_235, &ptr_236, &ptr_237, &ptr_238, &ptr_239,
+	&ptr_240, &ptr_241, &ptr_242, &ptr_243, &ptr_244, &ptr_245, &ptr_246, &ptr_247, &ptr_248, &ptr_249,
+	&ptr_250, &ptr_251, &ptr_252
+}; 
+
+/*
+####################################################################################################################
+====================================================================================================================
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+====================================================================================================================
+####################################################################################################################
+*/
+
+//PUNTARENAS_B
+	UPOINT ptrB_0 = {.x = 7.3, .y = 16.59};//^^^ Guanacaste  ^^^ vvv Pacifico vvv
+	UPOINT ptrB_1 = {.x = 7.94, .y = 16.2};
+	UPOINT ptrB_2 = {.x = 8.13, .y = 16.28};
+	UPOINT ptrB_3 = {.x = 8.45, .y = 16.01};
+	UPOINT ptrB_4 = {.x = 8.81, .y = 16.04};
+	UPOINT ptrB_5 = {.x = 9.1, .y = 15.92};
+	UPOINT ptrB_6 = {.x = 9.12, .y = 15.79};
+	UPOINT ptrB_7 = {.x = 8.98, .y = 15.62};
+	UPOINT ptrB_8 = {.x = 9.185, .y = 15.41};
+	UPOINT ptrB_9 = {.x = 9.04, .y = 15.28};
+	UPOINT ptrB_10 = {.x = 9.11, .y = 15.19};
+	UPOINT ptrB_11 = {.x = 9.52, .y = 15.2};
+	UPOINT ptrB_12 = {.x = 9.13, .y = 14.92};
+	UPOINT ptrB_13 = {.x = 9.01, .y = 14.65};
+	UPOINT ptrB_14 = {.x = 8.89, .y = 14.64};
+	UPOINT ptrB_15 = {.x = 8.85, .y = 14.41};
+	UPOINT ptrB_16 = {.x = 8.57, .y = 14.55};
+	UPOINT ptrB_17 = {.x = 8.43, .y = 14.38};
+	UPOINT ptrB_18 = {.x = 8.56, .y = 14.26};
+	UPOINT ptrB_19 = {.x = 8.51, .y = 14.13};
+	UPOINT ptrB_20 = {.x = 8.06, .y = 13.9};
+	UPOINT ptrB_21 = {.x = 7.8, .y = 13.2};
+	UPOINT ptrB_22 = {.x = 7.68, .y = 13.11};
+	UPOINT ptrB_23 = {.x = 7.45, .y = 13.22};
+	UPOINT ptrB_24 = {.x = 7.41, .y = 13.55};
+	UPOINT ptrB_25 = {.x = 7.01, .y = 13.95};
+	UPOINT ptrB_26 = {.x = 6.8, .y = 14.31};//vvv Guanacaste vvv ^^^ Pacifico ^^^
+	UPOINT ptrB_27 = {.x = 7, .y = 14.53};
+	UPOINT ptrB_28 = {.x = 7.12, .y = 15.22};
+	UPOINT ptrB_29 = {.x = 6.88, .y = 15.61};
+	UPOINT ptrB_30 = {.x = 6.3, .y = 15.81};
+	UPOINT ptrB_31 = {.x = 6.31, .y = 16.08};
+	UPOINT ptrB_32 = {.x = 6.71, .y = 16.03};
+	UPOINT ptrB_33 = {.x = 7.28, .y = 16.25};
+	UPOINT ptrB_34 = {.x = 7.27, .y = 16.52};
+
+//PUNTARENAS B
+UPOINT * puntarenasB[LEN_PUNTARENASB] = {
+	&ptrB_0, &ptrB_1, &ptrB_2, &ptrB_3, &ptrB_4, &ptrB_5, &ptrB_6, &ptrB_7, &ptrB_8, &ptrB_9,
+	&ptrB_10, &ptrB_11, &ptrB_12, &ptrB_13, &ptrB_14, &ptrB_15, &ptrB_16, &ptrB_17, &ptrB_18, &ptrB_19,
+	&ptrB_20, &ptrB_21, &ptrB_22, &ptrB_23, &ptrB_24, &ptrB_25, &ptrB_26, &ptrB_27, &ptrB_28, &ptrB_29,
+	&ptrB_30, &ptrB_31, &ptrB_32, &ptrB_33, &ptrB_34
 }; 
 
 /*
