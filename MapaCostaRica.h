@@ -3,6 +3,8 @@
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <GL/glut.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
 
 #include "./Operaciones/traslado.h"
@@ -1123,3 +1125,9 @@ void plot();
 void paint_pol();
 
 void convert_utop();
+
+void keyLector(unsigned char , int , int );
+
+void specialKeyLector(int , int , int );
+
+void mouseLector(int , int , int , int );

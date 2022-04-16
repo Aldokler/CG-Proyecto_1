@@ -5,6 +5,15 @@
 
 COLOR **buffer;
 
+PIX* puntosHeredia[LEN_HEREDIA];
+PIX* puntosLimon[LEN_LIMON]; 
+PIX* puntosCartago[LEN_CARTAGO]; 
+PIX* puntosSanJose[LEN_SANJOSE]; 
+PIX* puntosAlajuela[LEN_ALAJUELA]; 
+PIX* puntosGuanacaste[LEN_GUANACASTE]; 
+PIX* puntosPuntarenas[LEN_PUNTARENAS]; 
+PIX* puntosPuntarenasB[LEN_PUNTARENASB]; 
+
 /*
 #########################################################################################################################################
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -15,39 +24,25 @@ void display (void)
 {
   glClear (GL_COLOR_BUFFER_BIT);
 
-  PIX* puntosHeredia = malloc(LEN_HEREDIA * sizeof(PIX));
   convert_utop(heredia, puntosHeredia, LEN_HEREDIA);
-  paint_pol(puntosHeredia, LEN_HEREDIA);
-
-  PIX* puntosLimon = malloc(LEN_LIMON * sizeof(PIX)); 
   convert_utop(limon, puntosLimon, LEN_LIMON);
-  paint_pol(puntosLimon, LEN_LIMON);
-
-  PIX* puntosCartago = malloc(LEN_CARTAGO * sizeof(PIX)); 
   convert_utop(cartago, puntosCartago, LEN_CARTAGO);
-  paint_pol(puntosCartago, LEN_CARTAGO);
-
-  PIX* puntosSanJose = malloc(LEN_SANJOSE * sizeof(PIX)); 
   convert_utop(sanJose, puntosSanJose, LEN_SANJOSE);
-  paint_pol(puntosSanJose, LEN_SANJOSE);
-
-  PIX* puntosAlajuela = malloc(LEN_ALAJUELA * sizeof(PIX)); 
   convert_utop(alajuela, puntosAlajuela, LEN_ALAJUELA);
-  paint_pol(puntosAlajuela, LEN_ALAJUELA);
-
-  PIX* puntosGuanacaste = malloc(LEN_GUANACASTE * sizeof(PIX)); 
   convert_utop(guanacaste, puntosGuanacaste, LEN_GUANACASTE);
-  paint_pol(puntosGuanacaste, LEN_GUANACASTE);
-
-  PIX* puntosPuntarenas = malloc(LEN_PUNTARENAS * sizeof(PIX)); 
   convert_utop(puntarenas, puntosPuntarenas, LEN_PUNTARENAS);
-  paint_pol(puntosPuntarenas, LEN_PUNTARENAS);
-
-  PIX* puntosPuntarenasB = malloc(LEN_PUNTARENASB * sizeof(PIX)); 
   convert_utop(puntarenasB, puntosPuntarenasB, LEN_PUNTARENASB);
+
+  paint_pol(puntosHeredia, LEN_HEREDIA);
+  paint_pol(puntosLimon, LEN_LIMON);
+  paint_pol(puntosCartago, LEN_CARTAGO);
+  paint_pol(puntosSanJose, LEN_SANJOSE);
+  paint_pol(puntosAlajuela, LEN_ALAJUELA);
+  paint_pol(puntosGuanacaste, LEN_GUANACASTE);
+  paint_pol(puntosPuntarenas, LEN_PUNTARENAS);
   paint_pol(puntosPuntarenasB, LEN_PUNTARENASB);
-  
-  /*glClear (GL_COLOR_BUFFER_BIT);
+  /*
+  glClear (GL_COLOR_BUFFER_BIT);
 
   // Traslado
   T_puntos(puntosHeredia, LEN_HEREDIA, -100, 10);
@@ -56,6 +51,82 @@ void display (void)
   paint_pol(puntosLimon, LEN_LIMON);*/
 
   glFlush();
+}
+
+/*
+#########################################################################################################################################
+-----------------------------------------------------------------------------------------------------------------------------------------
+#########################################################################################################################################
+*/
+
+void keyLector(unsigned char key, int x, int y){
+  if (key == 27){
+    exit(0);
+  }
+  if (key == 'r' || key == 'R'){
+    display();
+  }
+  if (key == '0'){ //Mapa sin colorear
+    glClear (GL_COLOR_BUFFER_BIT);
+    glColor3f (1,1,1);
+    paint_pol(puntosHeredia, LEN_HEREDIA);
+    paint_pol(puntosLimon, LEN_LIMON);
+    paint_pol(puntosCartago, LEN_CARTAGO);
+    paint_pol(puntosSanJose, LEN_SANJOSE);
+    paint_pol(puntosAlajuela, LEN_ALAJUELA);
+    paint_pol(puntosGuanacaste, LEN_GUANACASTE);
+    paint_pol(puntosPuntarenas, LEN_PUNTARENAS);
+    paint_pol(puntosPuntarenasB, LEN_PUNTARENASB);
+    glFlush();
+  }
+  if (key == '1'){
+    glClear (GL_COLOR_BUFFER_BIT);
+    //Mapa con relleno de color
+    glFlush();
+  }
+  if (key == '2'){
+    glClear (GL_COLOR_BUFFER_BIT);
+    //Mapa con relleno de textura
+    glFlush();
+  }
+}
+
+void specialKeyLector(int key, int x, int y){
+  int mod = glutGetModifiers(); // Flechitas del teclado para hacer el PAN
+  /*
+  GLUT_ACTIVE_SHIFT – Set if either you press the SHIFT key, or Caps Lock is on. Note that if they are both on then the constant is not set.
+  GLUT_ACTIVE_CTRL – Set if you press the CTRL key.
+  GLUT_ACTIVE_ALT – Set if you press the ALT key.
+  */
+  if (key == GLUT_KEY_LEFT){
+    glClear (GL_COLOR_BUFFER_BIT);
+    glFlush();
+  }
+  if (key == GLUT_KEY_RIGHT){
+    glClear (GL_COLOR_BUFFER_BIT);
+    glFlush();
+  }
+  if (key == GLUT_KEY_UP){
+    glClear (GL_COLOR_BUFFER_BIT);
+    glFlush();
+  }
+  if (key == GLUT_KEY_DOWN){
+    glClear (GL_COLOR_BUFFER_BIT);
+    glFlush();
+  }
+}
+
+void mouseLector(int button, int state, int x, int y){
+  switch(button){
+    case 3: //acercar - zoom in - hacer la ruedita del mouse para arriba
+      glClear (GL_COLOR_BUFFER_BIT);
+      glFlush();
+      break;
+    case 4: //alejar - zoom out - hacer la ruedita del mouse para abajo
+      glClear (GL_COLOR_BUFFER_BIT);
+      glFlush();
+      break;
+  }
 }
 
 /*
@@ -91,7 +162,12 @@ int main(int argc, char** argv)
   glClear(GL_COLOR_BUFFER_BIT); 
   gluOrtho2D(-0.5, H_SIZE +0.5, -0.5, V_SIZE + 0.5);
 
+  glColor3f (1,1,1);
   glutDisplayFunc(display);
+
+  glutKeyboardFunc(keyLector);
+  glutSpecialFunc(specialKeyLector);
+  glutMouseFunc(mouseLector);
 
   // Crea las matrices de cada operacionn
   create_T_Matrix();
@@ -107,15 +183,9 @@ int main(int argc, char** argv)
 */
 
 void plot(int x,int y){
-  COLOR color;
-  buffer[x][y].r = 255;
-  buffer[x][y].g = 255;
-  buffer[x][y].b = 255;
-  glColor3f (buffer[x][y].r,buffer[x][y].g,buffer[x][y].b);
   glBegin(GL_POINTS);
   glVertex2i(x,y);
   glEnd();
-  glFlush();
 }
 
 /*
@@ -142,7 +212,6 @@ void convert_utop(UPOINT* apex_list[], PIX* points_list, int n){
   for (int i = 0; i < n; i++){
     x = trunc((apex_list[i]->x*H_SIZE)/len_x_universal);
     y = trunc((apex_list[i]->y*V_SIZE)/len_y_universal);
-    //printf("%d, %d \n", x, y);
     points_list[i].x = x; 
     points_list[i].y = y;
   }
