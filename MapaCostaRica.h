@@ -7,9 +7,10 @@
 #include <stdlib.h>
 #include <math.h>
 
+#include "./Operaciones/traslado.h"
+#include "./Operaciones/rotacion.h"
 #include "./Operaciones/pan.h"
 #include "./Operaciones/clipping.h"
-#include "./Operaciones/traslado.h"
 #include "./Operaciones/zoom.h"
 
 #define LEN_HEREDIA 58
@@ -1131,3 +1132,7 @@ void keyLector(unsigned char , int , int );
 void specialKeyLector(int , int , int );
 
 void mouseLector(int , int , int , int );
+
+void trasladeMap(int d_x, int d_y);
+
+void rotateMap(double grado);

@@ -29,7 +29,7 @@ void display (void)
   convert_utop(guanacaste, puntosGuanacaste, LEN_GUANACASTE);
   convert_utop(puntarenas, puntosPuntarenas, LEN_PUNTARENAS);
   convert_utop(puntarenasB, puntosPuntarenasB, LEN_PUNTARENASB);
-
+  
   paint_pol(puntosHeredia, LEN_HEREDIA);
   paint_pol(puntosLimon, LEN_LIMON);
   paint_pol(puntosCartago, LEN_CARTAGO);
@@ -38,38 +38,14 @@ void display (void)
   paint_pol(puntosGuanacaste, LEN_GUANACASTE);
   paint_pol(puntosPuntarenas, LEN_PUNTARENAS);
   paint_pol(puntosPuntarenasB, LEN_PUNTARENASB);
+
+  glClear (GL_COLOR_BUFFER_BIT);
   
+  //rotateMap(-45);
   //glClear (GL_COLOR_BUFFER_BIT);
-  
-  // Traslado
-  //for (int i = 0; i< 100; i++){
-    /**
-    T_puntos(puntosHeredia, LEN_HEREDIA, 10, 0);
-    paint_pol(puntosHeredia, LEN_HEREDIA);
-    */
-    //T_puntos(puntosLimon, LEN_LIMON, 70, 0);
-    //paint_pol(puntosLimon, LEN_LIMON);
-    /**
-    T_puntos(puntosCartago, LEN_CARTAGO, 10, 0);
-    paint_pol(puntosCartago, LEN_CARTAGO);
+  //trasladeMap(0,-100);
 
-    T_puntos(puntosSanJose, LEN_SANJOSE, 10, 0);
-    paint_pol(puntosSanJose, LEN_SANJOSE);
-
-    T_puntos(puntosAlajuela, LEN_ALAJUELA, 10, 0);
-    paint_pol(puntosAlajuela, LEN_ALAJUELA);
-  */
-    //T_puntos(puntosGuanacaste, LEN_GUANACASTE, -50, 10 );
-    //paint_pol(puntosGuanacaste, LEN_GUANACASTE);
   
-    //T_puntos(puntosPuntarenas, LEN_PUNTARENAS, 50, -100);
-    //paint_pol(puntosPuntarenas, LEN_PUNTARENAS);
-    
-    //T_puntos(puntosPuntarenasB, LEN_PUNTARENASB, 10, 0);
-    //paint_pol(puntosPuntarenasB, LEN_PUNTARENASB);
-  
-  //}
-
   glFlush();
 }
 
@@ -191,7 +167,11 @@ int main(int argc, char** argv)
 
   // Crea las matrices de cada operacionn
   create_T_Matrix();
+
+  create_R_Matrix();
+
   create_Z_Matrix();
+
  
   printf("Listo! \n");
   glutMainLoop();
@@ -217,10 +197,13 @@ void plot(int x,int y){
 
 void paint_pol(PIX* apex_list, int n){
   PIX* list = clip_lines(apex_list, n);
-  for (int i = 0; i < counter-1; i++){
-    bressenham_line(list[i].x, list[i].y, list[i+1].x, list[i+1].y);
+  if (counter > 0){
+    for (int i = 0; i < counter-1; i++){
+      //printf("i = %d\n",i);
+      bressenham_line(list[i].x, list[i].y, list[i+1].x, list[i+1].y);
+    }
+    bressenham_line(list[counter-1].x, list[counter-1].y, list[0].x, list[0].y);
   }
-  bressenham_line(list[counter-1].x, list[counter-1].y, list[0].x, list[0].y);
   free(list);
 }
 
@@ -394,3 +377,62 @@ void bressenham_line(int x0, int y0, int x1, int y1){
   }
 };
 
+/*
+#########################################################################################################################################
+-----------------------------------------------------------------------------------------------------------------------------------------
+#########################################################################################################################################
+*/
+
+void trasladeMap(int d_x, int d_y){
+  
+  T_puntos(puntosHeredia, LEN_HEREDIA, d_x, d_y);
+  paint_pol(puntosHeredia, LEN_HEREDIA);
+  
+  T_puntos(puntosLimon, LEN_LIMON, d_x, d_y);
+  paint_pol(puntosLimon, LEN_LIMON);
+  
+  T_puntos(puntosCartago, LEN_CARTAGO, d_x, d_y);
+  paint_pol(puntosCartago, LEN_CARTAGO);
+
+  T_puntos(puntosSanJose, LEN_SANJOSE, d_x, d_y);
+  paint_pol(puntosSanJose, LEN_SANJOSE);
+
+  T_puntos(puntosAlajuela, LEN_ALAJUELA, d_x, d_y);
+  paint_pol(puntosAlajuela, LEN_ALAJUELA);
+
+  T_puntos(puntosGuanacaste, LEN_GUANACASTE, d_x, d_y );
+  paint_pol(puntosGuanacaste, LEN_GUANACASTE);
+  
+  T_puntos(puntosPuntarenas, LEN_PUNTARENAS, d_x, d_y);
+  paint_pol(puntosPuntarenas, LEN_PUNTARENAS);
+  
+  T_puntos(puntosPuntarenasB, LEN_PUNTARENASB, d_x, d_y);
+  paint_pol(puntosPuntarenasB, LEN_PUNTARENASB);
+}
+
+void rotateMap(double grado) {
+
+  R_puntos(puntosHeredia, LEN_HEREDIA, grado);
+  paint_pol(puntosHeredia, LEN_HEREDIA);
+  
+  R_puntos(puntosLimon, LEN_LIMON, grado);
+  paint_pol(puntosLimon, LEN_LIMON);
+  
+  R_puntos(puntosCartago, LEN_CARTAGO, grado);
+  paint_pol(puntosCartago, LEN_CARTAGO);
+
+  R_puntos(puntosSanJose, LEN_SANJOSE, grado);
+  paint_pol(puntosSanJose, LEN_SANJOSE);
+
+  R_puntos(puntosAlajuela, LEN_ALAJUELA, grado);
+  paint_pol(puntosAlajuela, LEN_ALAJUELA);
+
+  R_puntos(puntosGuanacaste, LEN_GUANACASTE, grado);
+  paint_pol(puntosGuanacaste, LEN_GUANACASTE);
+
+  R_puntos(puntosPuntarenas, LEN_PUNTARENAS, grado);
+  paint_pol(puntosPuntarenas, LEN_PUNTARENAS);
+  
+  R_puntos(puntosPuntarenasB, LEN_PUNTARENASB, grado);
+  paint_pol(puntosPuntarenasB, LEN_PUNTARENASB);
+}

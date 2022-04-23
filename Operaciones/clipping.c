@@ -1,7 +1,9 @@
 #include "clipping.h"
 
 void clipping_x_max(PIX* lista_temp, PIX* apex_list, int i, int next_i){
-    
+    if (i < 0 || next_i < 0){
+        return;
+    }
     long double m, b;
     m = (long double)(apex_list[i].y - apex_list[next_i].y) / (long double)(apex_list[i].x - apex_list[next_i].x);
     b = apex_list[next_i].y - m*apex_list[next_i].x;
@@ -25,7 +27,9 @@ void clipping_x_max(PIX* lista_temp, PIX* apex_list, int i, int next_i){
 }
 
 void clipping_x_min(PIX* lista_temp, PIX* apex_list, int i, int next_i){
-    
+    if (i < 0 || next_i < 0){
+        return;
+    }
     long double m, b;
     m = (long double)(apex_list[i].y - apex_list[next_i].y) / (long double)(apex_list[i].x - apex_list[next_i].x);
     b = apex_list[next_i].y - m*apex_list[next_i].x;
@@ -49,7 +53,9 @@ void clipping_x_min(PIX* lista_temp, PIX* apex_list, int i, int next_i){
 }
 
 void clipping_y_max(PIX* lista_temp, PIX* apex_list, int i, int next_i){
-    
+    if (i < 0 || next_i < 0){
+        return;
+    }
     long double m, b;
     m = (long double)(apex_list[i].y - apex_list[next_i].y) / (long double)(apex_list[i].x - apex_list[next_i].x);
     b = apex_list[next_i].y - m*apex_list[next_i].x;
@@ -59,21 +65,35 @@ void clipping_y_max(PIX* lista_temp, PIX* apex_list, int i, int next_i){
         lista_temp[counter].y = apex_list[next_i].y;
         counter++;
     } else if (apex_list[i].y <= V_SIZE && apex_list[next_i].y > V_SIZE) { // IN-OUT
-        lista_temp[counter].x = (int)(apex_list[next_i].y - b)/m; 
+        if (apex_list[i].x - apex_list[next_i].x == 0) {
+            lista_temp[counter].x = apex_list[next_i].x;
+        } else {
+            lista_temp[counter].x = (int)((apex_list[next_i].y - b)/m); 
+        }
         lista_temp[counter].y = V_SIZE;
         counter++;
     } else if (apex_list[i].y > V_SIZE && apex_list[next_i].y <= V_SIZE) { // OUT-IN
-        lista_temp[counter].x = (int)(apex_list[next_i].y - b)/m; 
+        if (apex_list[i].x - apex_list[next_i].x == 0) {
+            lista_temp[counter].x = apex_list[next_i].x;
+        } else {
+            lista_temp[counter].x = (int)((apex_list[next_i].y - b)/m); 
+        }
         lista_temp[counter].y = V_SIZE;
         counter++;
-        lista_temp[counter].x = (int)(apex_list[next_i].y - b)/m; 
+        if (apex_list[i].x - apex_list[next_i].x == 0) {
+            lista_temp[counter].x = apex_list[next_i].x;
+        } else {
+            lista_temp[counter].x = (int)((apex_list[next_i].y - b)/m); 
+        } 
         lista_temp[counter].y = V_SIZE;
         counter++;
     }
 }
 
 void clipping_y_min(PIX* lista_temp, PIX* apex_list, int i, int next_i){
-    
+    if (i < 0 || next_i < 0){
+        return;
+    }
     long double m, b;
     m = (long double)(apex_list[i].y - apex_list[next_i].y) / (long double)(apex_list[i].x - apex_list[next_i].x);
     b = apex_list[next_i].y - m*apex_list[next_i].x;
@@ -83,14 +103,27 @@ void clipping_y_min(PIX* lista_temp, PIX* apex_list, int i, int next_i){
         lista_temp[counter].y = apex_list[next_i].y;
         counter++;
     } else if (apex_list[i].y >= 0 && apex_list[next_i].y < 0) { // IN-OUT
-        lista_temp[counter].x = (int)(apex_list[next_i].y - b)/m; 
+        if (apex_list[i].x - apex_list[next_i].x == 0) {
+            lista_temp[counter].x = apex_list[next_i].x;
+        } else {
+            lista_temp[counter].x = (int)((apex_list[next_i].y - b)/m); 
+        }
         lista_temp[counter].y = 0;
+        printf("%Lf\n", (apex_list[next_i].y - b)/m);
         counter++;
     } else if (apex_list[i].y < 0 && apex_list[next_i].y >= 0) { // OUT-IN
-        lista_temp[counter].x = (int)(apex_list[next_i].y - b)/m; 
+        if (apex_list[i].x - apex_list[next_i].x == 0) {
+            lista_temp[counter].x = apex_list[next_i].x;
+        } else {
+            lista_temp[counter].x = (int)((apex_list[next_i].y - b)/m); 
+        }
         lista_temp[counter].y = 0;
         counter++;
-        lista_temp[counter].x = (int)(apex_list[next_i].y - b)/m; 
+        if (apex_list[i].x - apex_list[next_i].x == 0) {
+            lista_temp[counter].x = apex_list[next_i].x;
+        } else {
+            lista_temp[counter].x = (int)((apex_list[next_i].y - b)/m); 
+        }
         lista_temp[counter].y = 0;
         counter++;
     }
@@ -99,13 +132,14 @@ void clipping_y_min(PIX* lista_temp, PIX* apex_list, int i, int next_i){
 PIX* clip_lines (PIX* apex_list, int size){
     int i;
     PIX* lista_temp = (PIX*)malloc(size * 2 * sizeof(PIX));
-
+    
     for (i = 0; i < size; i++){
         lista_temp[i].x = -1;
         lista_temp[i].x = -1;
     }
     counter = 0;
     // borde x_max
+    
     clipping_x_max(lista_temp, apex_list, size - 1, 0);
     for (i = 0; i < size-1; i++){
         clipping_x_max(lista_temp, apex_list, i, i+1);
@@ -121,7 +155,7 @@ PIX* clip_lines (PIX* apex_list, int size){
         clipping_x_min(lista_temp1, lista_temp, i, i+1);
     }
     lista_temp1 = (PIX*)realloc(lista_temp1,counter * sizeof(PIX));
-
+    
     // borde y_max
     PIX* lista_temp2 = (PIX*)malloc(counter * 2 * sizeof(PIX));
     size = counter;
