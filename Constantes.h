@@ -3,6 +3,11 @@
 #define H_SIZE 600
 #define V_SIZE 600
 
+extern double x_min_universal;
+extern double x_max_universal;
+extern double y_min_universal;
+extern double y_max_universal;
+
 typedef struct {
   int x;
   int y;
