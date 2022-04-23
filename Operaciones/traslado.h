@@ -6,7 +6,7 @@
 double ** matriz_T;
 
 void create_T_Matrix(){
-    matriz_T = declararMatriz(3,3);
+    matriz_T = declararMatrizD(3,3);
     
     matriz_T[0][0] = 1;
     matriz_T[1][1] = 1;
@@ -17,11 +17,11 @@ double** trasladar(int d_x, int d_y,double** matriz_XY){
     matriz_T[0][2] = d_x;
     matriz_T[1][2] = d_y;
 
-    return multiplicar(matriz_T,matriz_XY,3,1,3);
+    return multiplicarD(matriz_T,matriz_XY,3,1,3);
 }
 
 void T_puntos(PIX* apex_list, int n,int d_x, int d_y){
-    double** matriz_final = declararMatriz (3,1);
+    double** matriz_final = declararMatrizD (3,1);
     matriz_final[2][0] = 1;
 
     for (int i = 0; i < n; i++){

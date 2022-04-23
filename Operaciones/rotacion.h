@@ -26,11 +26,11 @@ double** rotar(double alpha, double** matriz_XY){
     matriz_R[1][0] = sin(alpha);
     matriz_R[1][1] = cos(alpha);
 
-    return multiplicar(matriz_R,matriz_XY,3,1,3);
+    return multiplicarD(matriz_R,matriz_XY,3,1,3);
 }
 
 void R_puntos(PIX* apex_list, int n, double alpha){
-    double** matriz_final = declararMatriz (3,1);
+    double** matriz_final = declararMatrizD (3,1);
     double** matriz_temp1;
     double** matriz_temp2;
 

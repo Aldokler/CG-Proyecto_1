@@ -39,12 +39,12 @@ void display (void)
   paint_pol(puntosPuntarenas, LEN_PUNTARENAS);
   paint_pol(puntosPuntarenasB, LEN_PUNTARENASB);
 
-  //glClear (GL_COLOR_BUFFER_BIT);
-  /**
-  rotateMap(-45);
   glClear (GL_COLOR_BUFFER_BIT);
-  trasladeMap(0,-100);
-  */
+  
+  //rotateMap(-45);
+  //glClear (GL_COLOR_BUFFER_BIT);
+  //trasladeMap(0,-100);
+  
   glFlush();
 }
 

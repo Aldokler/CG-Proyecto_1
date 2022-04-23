@@ -10,8 +10,12 @@ typedef struct {
   int y;
 } PIX;
 
-double** declararMatriz(int a, int b);
+int** declararMatriz(int a, int b);
 
-void print_matrix (double** matrix,int i, int j);
+void print_matrix (int** matrix,int i, int j);
 
-double** multiplicar(double** matriz1, double** matriz2, int len_row_1, int len_col_2, int len_col_1);
+int** multiplicar(int** matriz1, int** matriz2, int len_row_1, int len_col_2, int len_col_1);
+
+double** declararMatrizD(int a, int b);
+
+double** multiplicarD(double** matriz1, double** matriz2, int len_row_1, int len_col_2, int len_col_1);
