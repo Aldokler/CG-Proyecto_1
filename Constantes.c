@@ -1,11 +1,12 @@
 #include "Constantes.h"
 
-int** declararMatriz(int a, int b){
-    int i, j, **matriz;
+double** declararMatriz(int a, int b){
+    int i, j;
+    double** matriz;
 
-    matriz = (int**)malloc(a*sizeof(int*));
+    matriz = (double**)malloc(a*sizeof(double*));
     for (i = 0; i < a; i++){
-        matriz[i] = (int*)malloc(b*sizeof(int));
+        matriz[i] = (double*)malloc(b*sizeof(double));
         for (j = 0; j < b; j++){
             matriz[i][j] = 0;
         }
@@ -13,10 +14,19 @@ int** declararMatriz(int a, int b){
     return matriz;
 }
 
-int** multiplicar(int** matriz1, int** matriz2, int len_row_1, int len_col_2, int len_col_1) {
-    int** matrix = declararMatriz(len_row_1,len_col_2);
+void print_matrix (double** matrix,int i, int j){
+    for (int i = 0; i < 3; i++){
+        for (int j = 0; j < 3; j++){
+            printf("%f, ",matrix[i][j]);
+        }
+        printf("\n");
+    }
+}
 
-    int suma;
+double** multiplicar(double** matriz1, double** matriz2, int len_row_1, int len_col_2, int len_col_1) {
+    double** matrix = declararMatriz(len_row_1,len_col_2);
+
+    double suma;
 
     for (int col = 0; col < len_col_2; col++) {
         for (int row = 0; row < len_row_1; row++){
