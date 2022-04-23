@@ -1,5 +1,10 @@
 #include "Constantes.h"
 
+double x_min_universal = 0;
+double x_max_universal = 28.41;
+double y_min_universal = 0;
+double y_max_universal = 26.8;
+
 int** declararMatriz(int a, int b){
     int i, j;
     int** matriz;

@@ -44,6 +44,7 @@ void display (void)
   //rotateMap(-45);
   //glClear (GL_COLOR_BUFFER_BIT);
   //trasladeMap(0,-100);
+
   
   glFlush();
 }
@@ -94,32 +95,32 @@ void specialKeyLector(int key, int x, int y){
   GLUT_ACTIVE_ALT – Set if you press the ALT key.
   */
   if (key == GLUT_KEY_LEFT){
-    glClear (GL_COLOR_BUFFER_BIT);
-    glFlush();
+    P_puntos(1, 0);
+    glutPostRedisplay();
   }
   if (key == GLUT_KEY_RIGHT){
-    glClear (GL_COLOR_BUFFER_BIT);
-    glFlush();
+    P_puntos(-1, 0);
+    glutPostRedisplay();
   }
   if (key == GLUT_KEY_UP){
-    glClear (GL_COLOR_BUFFER_BIT);
-    glFlush();
+    P_puntos(0, -1);
+    glutPostRedisplay();
   }
   if (key == GLUT_KEY_DOWN){
-    glClear (GL_COLOR_BUFFER_BIT);
-    glFlush();
+    P_puntos(0, 1);
+    glutPostRedisplay();
   }
 }
 
 void mouseLector(int button, int state, int x, int y){
   switch(button){
     case 3: //acercar - zoom in - hacer la ruedita del mouse para arriba
-      glClear (GL_COLOR_BUFFER_BIT);
-      glFlush();
+      Z_puntos(0.5);
+      glutPostRedisplay(); 
       break;
     case 4: //alejar - zoom out - hacer la ruedita del mouse para abajo
-      glClear (GL_COLOR_BUFFER_BIT);
-      glFlush();
+      Z_puntos(2);
+      glutPostRedisplay(); 
       break;
   }
 }
@@ -166,7 +167,11 @@ int main(int argc, char** argv)
 
   // Crea las matrices de cada operacionn
   create_T_Matrix();
+
   create_R_Matrix();
+
+  create_Z_Matrix();
+
  
   printf("Listo! \n");
   glutMainLoop();
@@ -211,8 +216,8 @@ void paint_pol(PIX* apex_list, int n){
 void convert_utop(UPOINT* apex_list[], PIX* points_list, int n){
   int x,y;
   for (int i = 0; i < n; i++){
-    x = trunc((apex_list[i]->x*H_SIZE)/len_x_universal);
-    y = trunc((apex_list[i]->y*V_SIZE)/len_y_universal);
+    x = trunc(H_SIZE*((apex_list[i]->x-x_min_universal)/(x_max_universal-x_min_universal)));
+    y = trunc(V_SIZE*((apex_list[i]->y-y_min_universal)/(y_max_universal-y_min_universal)));
     points_list[i].x = x; 
     points_list[i].y = y;
   }

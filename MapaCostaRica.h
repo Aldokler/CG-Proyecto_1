@@ -9,7 +9,9 @@
 
 #include "./Operaciones/traslado.h"
 #include "./Operaciones/rotacion.h"
+#include "./Operaciones/pan.h"
 #include "./Operaciones/clipping.h"
+#include "./Operaciones/zoom.h"
 
 #define LEN_HEREDIA 58
 #define LEN_LIMON 125
@@ -19,9 +21,6 @@
 #define LEN_GUANACASTE 141
 #define LEN_PUNTARENAS 254
 #define LEN_PUNTARENASB 35
-
-int len_x_universal = 28.41;
-int len_y_universal = 26.8;
 
 typedef struct {
   long double x;
