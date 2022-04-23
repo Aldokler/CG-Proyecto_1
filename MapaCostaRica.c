@@ -1,8 +1,5 @@
 #include "MapaCostaRica.h"
 
-#define H_SIZE 600
-#define V_SIZE 600
-
 COLOR **buffer;
 
 PIX* puntosHeredia[LEN_HEREDIA];
@@ -41,14 +38,37 @@ void display (void)
   paint_pol(puntosGuanacaste, LEN_GUANACASTE);
   paint_pol(puntosPuntarenas, LEN_PUNTARENAS);
   paint_pol(puntosPuntarenasB, LEN_PUNTARENASB);
-  /*
-  glClear (GL_COLOR_BUFFER_BIT);
-
+  
+  //glClear (GL_COLOR_BUFFER_BIT);
+  
   // Traslado
-  T_puntos(puntosHeredia, LEN_HEREDIA, -100, 10);
-  paint_pol(puntosHeredia, LEN_HEREDIA);
-  T_puntos(puntosLimon, LEN_LIMON, -100, 10);
-  paint_pol(puntosLimon, LEN_LIMON);*/
+  //for (int i = 0; i< 100; i++){
+    /**
+    T_puntos(puntosHeredia, LEN_HEREDIA, 10, 0);
+    paint_pol(puntosHeredia, LEN_HEREDIA);
+    */
+    //T_puntos(puntosLimon, LEN_LIMON, 70, 0);
+    //paint_pol(puntosLimon, LEN_LIMON);
+    /**
+    T_puntos(puntosCartago, LEN_CARTAGO, 10, 0);
+    paint_pol(puntosCartago, LEN_CARTAGO);
+
+    T_puntos(puntosSanJose, LEN_SANJOSE, 10, 0);
+    paint_pol(puntosSanJose, LEN_SANJOSE);
+
+    T_puntos(puntosAlajuela, LEN_ALAJUELA, 10, 0);
+    paint_pol(puntosAlajuela, LEN_ALAJUELA);
+  */
+    //T_puntos(puntosGuanacaste, LEN_GUANACASTE, -50, 10 );
+    //paint_pol(puntosGuanacaste, LEN_GUANACASTE);
+  
+    T_puntos(puntosPuntarenas, LEN_PUNTARENAS, 50, -100);
+    paint_pol(puntosPuntarenas, LEN_PUNTARENAS);
+    
+    //T_puntos(puntosPuntarenasB, LEN_PUNTARENASB, 10, 0);
+    //paint_pol(puntosPuntarenasB, LEN_PUNTARENASB);
+  
+  //}
 
   glFlush();
 }
@@ -195,10 +215,12 @@ void plot(int x,int y){
 */
 
 void paint_pol(PIX* apex_list, int n){
-  for (int i = 0; i < n-1; i++){
-    bressenham_line(apex_list[i].x, apex_list[i].y, apex_list[i+1].x, apex_list[i+1].y);
+  PIX* list = clip_lines(apex_list, n);
+  for (int i = 0; i < counter-1; i++){
+    bressenham_line(list[i].x, list[i].y, list[i+1].x, list[i+1].y);
   }
-  bressenham_line(apex_list[n-1].x, apex_list[n-1].y, apex_list[0].x, apex_list[0].y);
+  bressenham_line(list[counter-1].x, list[counter-1].y, list[0].x, list[0].y);
+  free(list);
 }
 
 /*

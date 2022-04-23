@@ -1,4 +1,7 @@
+#ifndef CONSTANTE_H
+#define CONSTANTE_H
 #include "../Constantes.h"
+#endif
 
 int ** matriz_T;
 

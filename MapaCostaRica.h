@@ -8,6 +8,7 @@
 #include <math.h>
 
 #include "./Operaciones/traslado.h"
+#include "./Operaciones/clipping.h"
 
 #define LEN_HEREDIA 58
 #define LEN_LIMON 125

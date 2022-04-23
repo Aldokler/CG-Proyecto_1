@@ -16,6 +16,7 @@ SRCS = $(shell find  -name '*.c')
 
 all:
 	cc $(FLAGS) $(LDFLAGS)  -o $(OUTPUT) $(SRCS) $(LDLIBS)
+	./$(OUTPUT)
 
 
 clean:

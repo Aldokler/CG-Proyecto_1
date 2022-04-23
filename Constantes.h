@@ -1,5 +1,8 @@
 #include <malloc.h>
 
+#define H_SIZE 600
+#define V_SIZE 600
+
 typedef struct {
   int x;
   int y;
