@@ -22,6 +22,9 @@
 #define LEN_PUNTARENAS 254
 #define LEN_PUNTARENASB 35
 
+int TRASLADE_VALUE = 20;
+int ROTATE_VALUE = 10;
+
 typedef struct {
   long double x;
   long double y;
@@ -1118,6 +1121,8 @@ typedef struct {
   double g;
   double b;
 } COLOR;
+
+void help();
 
 void bressenham_line ();
 

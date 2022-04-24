@@ -85,6 +85,40 @@ void keyLector(unsigned char key, int x, int y){
     //Mapa con relleno de textura
     glFlush();
   }
+  // Teclas para el traslado
+  if (key == 'a' || key == 'A'){
+    glClear (GL_COLOR_BUFFER_BIT);
+    trasladeMap(-TRASLADE_VALUE,0);
+    glFlush();
+  }
+  if (key == 'd' || key == 'D'){
+    glClear (GL_COLOR_BUFFER_BIT);
+    trasladeMap(TRASLADE_VALUE,0);
+    glFlush();
+  }
+  if (key == 'w' || key == 'W'){
+    glClear (GL_COLOR_BUFFER_BIT);
+    trasladeMap(0,TRASLADE_VALUE);
+    glFlush();
+  }
+  if (key == 's' || key == 'S'){
+    glClear (GL_COLOR_BUFFER_BIT);
+    trasladeMap(0,-TRASLADE_VALUE);
+    glFlush();
+  }
+
+  //Teclas para rotaciones
+  if (key == 'q' || key == 'Q'){
+    glClear (GL_COLOR_BUFFER_BIT);
+    rotateMap(ROTATE_VALUE);
+    glFlush();
+  }
+  if (key == 'e' || key == 'E'){
+    glClear (GL_COLOR_BUFFER_BIT);
+    rotateMap(-ROTATE_VALUE);
+    glFlush();
+  }
+
 }
 
 void specialKeyLector(int key, int x, int y){
@@ -172,9 +206,30 @@ int main(int argc, char** argv)
 
   create_Z_Matrix();
 
- 
+  
   printf("Listo! \n");
+  help();
   glutMainLoop();
+}
+
+void help(){
+  printf(" ______________________________________________ \n");
+  printf("| Comandos para el manejo del mapa             |\n");
+  printf("| (W,A,S,D)               => Traslado          |\n");
+  printf("| (Q,E)                   => Rotacion          |\n");
+  printf("| (Up, Down, Left, Right) => Pan               |\n");
+  printf("| (Mouse Wheel)           => Zoom in, Zoom out |\n");
+  printf("| R                       => Reiniciar         |\n");
+  printf("| ESC                     => Cerrar            |\n");
+  printf("|______________________________________________|\n");
+
+  printf(" ________________________\n");
+  printf("| Modos del mapa         |\n");
+  printf("| Blanco y Negro  => 0   |\n");
+  printf("| Colores         => 1   |\n");
+  printf("| Texturas        => 2   |\n");
+  printf("|________________________|\n");
+
 }
 
 /*

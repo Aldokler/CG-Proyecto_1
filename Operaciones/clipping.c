@@ -109,7 +109,6 @@ void clipping_y_min(PIX* lista_temp, PIX* apex_list, int i, int next_i){
             lista_temp[counter].x = (int)((apex_list[next_i].y - b)/m); 
         }
         lista_temp[counter].y = 0;
-        printf("%Lf\n", (apex_list[next_i].y - b)/m);
         counter++;
     } else if (apex_list[i].y < 0 && apex_list[next_i].y >= 0) { // OUT-IN
         if (apex_list[i].x - apex_list[next_i].x == 0) {
