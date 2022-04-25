@@ -77,6 +77,7 @@ void displayMode(){
 */
 
 void keyLector(unsigned char key, int x, int y){
+  int mod = glutGetModifiers();
   if (key == 27){
     exit(0);
   }
@@ -107,34 +108,82 @@ void keyLector(unsigned char key, int x, int y){
   // Teclas para el traslado
   if (key == 'a' || key == 'A'){
     glClear (GL_COLOR_BUFFER_BIT);
-    trasladeMap(TRASLADE_VALUE,0);
+    if (mod == GLUT_ACTIVE_SHIFT){
+      trasladeMap(trunc(TRASLADE_VALUE/2),0);   
+    }
+    else if (mod == GLUT_ACTIVE_ALT){
+      trasladeMap(TRASLADE_VALUE*2,0);   
+    }
+    else{
+      trasladeMap(TRASLADE_VALUE,0);      
+    }
     glFlush();
   }
   if (key == 'd' || key == 'D'){
     glClear (GL_COLOR_BUFFER_BIT);
-    trasladeMap(-TRASLADE_VALUE,0);
+    if (mod == GLUT_ACTIVE_SHIFT){
+      trasladeMap(-trunc(TRASLADE_VALUE/2),0);
+    }
+    else if (mod == GLUT_ACTIVE_ALT){
+      trasladeMap(-TRASLADE_VALUE*2,0);
+    }
+    else{
+      trasladeMap(-TRASLADE_VALUE,0);
+    }
     glFlush();
   }
   if (key == 'w' || key == 'W'){
     glClear (GL_COLOR_BUFFER_BIT);
-    trasladeMap(0,-TRASLADE_VALUE);
+    if (mod == GLUT_ACTIVE_SHIFT){
+      trasladeMap(0,-trunc(TRASLADE_VALUE/2));
+    }
+    else if (mod == GLUT_ACTIVE_ALT){
+      trasladeMap(0,-TRASLADE_VALUE*2);
+    }
+    else{
+      trasladeMap(0,-TRASLADE_VALUE);      
+    }
     glFlush();
   }
   if (key == 's' || key == 'S'){
     glClear (GL_COLOR_BUFFER_BIT);
-    trasladeMap(0,TRASLADE_VALUE);
+    if (mod == GLUT_ACTIVE_SHIFT){
+      trasladeMap(0,trunc(TRASLADE_VALUE/2)); 
+    }
+    else if (mod == GLUT_ACTIVE_ALT){
+      trasladeMap(0,TRASLADE_VALUE*2); 
+    }
+    else{
+      trasladeMap(0,TRASLADE_VALUE);      
+    }
     glFlush();
   }
 
   //Teclas para rotaciones
   if (key == 'q' || key == 'Q'){
     glClear (GL_COLOR_BUFFER_BIT);
-    rotateMap(ROTATE_VALUE);
+    if (mod == GLUT_ACTIVE_SHIFT){
+      rotateMap(trunc(ROTATE_VALUE/2));
+    }
+    else if (mod == GLUT_ACTIVE_ALT){
+      rotateMap(ROTATE_VALUE*2);
+    }
+    else{
+      rotateMap(ROTATE_VALUE);      
+    }
     glFlush();
   }
   if (key == 'e' || key == 'E'){
     glClear (GL_COLOR_BUFFER_BIT);
-    rotateMap(-ROTATE_VALUE);
+    if (mod == GLUT_ACTIVE_SHIFT){
+      rotateMap(-trunc(ROTATE_VALUE/2));
+    }
+    else if (mod == GLUT_ACTIVE_ALT){
+      rotateMap(-ROTATE_VALUE*2);
+    }
+    else{
+      rotateMap(-ROTATE_VALUE);
+    }
     glFlush();
   }
 
@@ -146,6 +195,7 @@ void specialKeyLector(int key, int x, int y){
   GLUT_ACTIVE_SHIFT – Set if either you press the SHIFT key, or Caps Lock is on. Note that if they are both on then the constant is not set.
   GLUT_ACTIVE_CTRL – Set if you press the CTRL key.
   GLUT_ACTIVE_ALT – Set if you press the ALT key.
+  GLUT_ACTIVE_ALT|GLUT_ACTIVE_CTRL - Set if you press both the ALT and the CTRL key.
   */
   /*
   if (key == GLUT_KEY_LEFT){
@@ -167,13 +217,30 @@ void specialKeyLector(int key, int x, int y){
 }
 
 void mouseLector(int button, int state, int x, int y){
+  int mod = glutGetModifiers();
   switch(button){
     case 3: //acercar - zoom in - hacer la ruedita del mouse para arriba
-      Z_puntos(0.83);
+      if (mod == GLUT_ACTIVE_SHIFT){
+        Z_puntos(0.9);
+      }
+      else if (mod == GLUT_ACTIVE_ALT){
+        Z_puntos(0.8);
+      }
+      else{
+        Z_puntos(0.85);
+      }
       glutPostRedisplay(); 
       break;
     case 4: //alejar - zoom out - hacer la ruedita del mouse para abajo
-      Z_puntos(1.2);
+      if (mod == GLUT_ACTIVE_SHIFT){
+        Z_puntos(1.15);
+      }
+      else if (mod == GLUT_ACTIVE_ALT){
+        Z_puntos(1.25);
+      }
+      else{
+        Z_puntos(1.2);
+      }
       glutPostRedisplay(); 
       break;
   }
@@ -240,6 +307,9 @@ void help(){
   printf("| (Mouse Wheel)           => Zoom in, Zoom out |\n");
   printf("| R                       => Reiniciar         |\n");
   printf("| ESC                     => Cerrar            |\n");
+  printf("|                                              |\n");
+  printf("| SHIFT                    => Modo lento       |\n");
+  printf("| ALT                     => Modo Rápido       |\n");
   printf("|______________________________________________|\n");
 
   printf(" ________________________\n");
