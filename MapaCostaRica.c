@@ -175,11 +175,11 @@ void specialKeyLector(int key, int x, int y){
 void mouseLector(int button, int state, int x, int y){
   switch(button){
     case 3: //acercar - zoom in - hacer la ruedita del mouse para arriba
-      Z_puntos(0.5);
+      Z_puntos(0.83);
       glutPostRedisplay(); 
       break;
     case 4: //alejar - zoom out - hacer la ruedita del mouse para abajo
-      Z_puntos(2);
+      Z_puntos(1.2);
       glutPostRedisplay(); 
       break;
   }
