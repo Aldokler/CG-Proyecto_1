@@ -30,10 +30,15 @@ void Z_puntos(double z){
     matriz_max[2][0] = 1;
     matriz_min = zoom(z, matriz_min);
     matriz_max = zoom(z, matriz_max);
-    x_min_universal = matriz_min[0][0];
-    x_max_universal = matriz_max[0][0];
-    y_min_universal = matriz_min[1][0];
-    y_max_universal = matriz_max[1][0];
+    if (matriz_min[0][0] < 0      &&
+        matriz_max[0][0] >  28.41 &&
+        matriz_min[1][0] < 0      &&
+        matriz_max[1][0] > 26.8){
+        x_min_universal = matriz_min[0][0];
+        x_max_universal = matriz_max[0][0];
+        y_min_universal = matriz_min[1][0];
+        y_max_universal = matriz_max[1][0];
+    }
 
     free(matriz_min);
     free(matriz_max);

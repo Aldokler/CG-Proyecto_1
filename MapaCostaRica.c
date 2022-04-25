@@ -189,36 +189,10 @@ void keyLector(unsigned char key, int x, int y){
 
 }
 
-void specialKeyLector(int key, int x, int y){
-  int mod = glutGetModifiers(); // Flechitas del teclado para hacer el PAN
-  /*
-  GLUT_ACTIVE_SHIFT – Set if either you press the SHIFT key, or Caps Lock is on. Note that if they are both on then the constant is not set.
-  GLUT_ACTIVE_CTRL – Set if you press the CTRL key.
-  GLUT_ACTIVE_ALT – Set if you press the ALT key.
-  GLUT_ACTIVE_ALT|GLUT_ACTIVE_CTRL - Set if you press both the ALT and the CTRL key.
-  */
-  /*
-  if (key == GLUT_KEY_LEFT){
-    P_puntos(1, 0);
-    glutPostRedisplay();
-  }
-  if (key == GLUT_KEY_RIGHT){
-    P_puntos(-1, 0);
-    glutPostRedisplay();
-  }
-  if (key == GLUT_KEY_UP){
-    P_puntos(0, -1);
-    glutPostRedisplay();
-  }
-  if (key == GLUT_KEY_DOWN){
-    P_puntos(0, 1);
-    glutPostRedisplay();
-  }*/
-}
-
 void mouseLector(int button, int state, int x, int y){
   int mod = glutGetModifiers();
   switch(button){
+    
     case 3: //acercar - zoom in - hacer la ruedita del mouse para arriba
       if (mod == GLUT_ACTIVE_SHIFT){
         Z_puntos(0.9);
@@ -275,7 +249,7 @@ int main(int argc, char** argv)
   glutInit(&argc, argv);
   glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
   glutInitWindowSize(H_SIZE,V_SIZE);
-  glutCreateWindow("Una linea");
+  glutCreateWindow("Costa Rica Map");
   glClear(GL_COLOR_BUFFER_BIT); 
   gluOrtho2D(-0.5, H_SIZE +0.5, -0.5, V_SIZE + 0.5);
 
@@ -283,7 +257,6 @@ int main(int argc, char** argv)
   glutDisplayFunc(display);
 
   glutKeyboardFunc(keyLector);
-  glutSpecialFunc(specialKeyLector);
   glutMouseFunc(mouseLector);
 
   // Crea las matrices de cada operacionn
