@@ -1125,6 +1125,9 @@ typedef struct {
   double b;
 } COLOR;
 
+void display();
+void displayMode();
+
 void help();
 
 void bressenham_line ();

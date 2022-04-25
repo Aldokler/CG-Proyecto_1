@@ -8,8 +8,8 @@ int ** matriz_T;
 
 void create_T_Matrix();
 
-double** trasladarD(int d_x, int d_y,double** matriz_XY);
+double** trasladarD(double d_x, double d_y,double** matriz_XY);
 int** trasladar(int d_x, int d_y,int** matriz_XY);
 
 void T_puntos(PIX* apex_list, int n,int d_x, int d_y);
-void T_puntos_D(PIX* apex_list, int n,int d_x, int d_y);
+void T_puntos_D(PIX* apex_list, int n,double d_x, double d_y);

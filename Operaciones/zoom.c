@@ -14,13 +14,12 @@ double** zoom(double z, double** matriz_XY){
     matriz_Z[1][1] = z;
     matriz_Z[1][2] = y_c - y_c*z;
 
-
     return multiplicarD(matriz_Z,matriz_XY,3,1,3);
 }
 
 void Z_puntos(double z){
-    double** matriz_min = declararMatriz (3,1);
-    double** matriz_max = declararMatriz (3,1);
+    double** matriz_min = declararMatrizD (3,1);
+    double** matriz_max = declararMatrizD (3,1);
     
     matriz_min[0][0] = x_min_universal;
     matriz_min[1][0] = y_min_universal;
@@ -35,4 +34,7 @@ void Z_puntos(double z){
     x_max_universal = matriz_max[0][0];
     y_min_universal = matriz_min[1][0];
     y_max_universal = matriz_max[1][0];
+
+    free(matriz_min);
+    free(matriz_max);
 }
