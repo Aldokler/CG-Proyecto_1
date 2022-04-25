@@ -308,8 +308,8 @@ void help(){
   printf("| R                       => Reiniciar         |\n");
   printf("| ESC                     => Cerrar            |\n");
   printf("|                                              |\n");
-  printf("| SHIFT                    => Modo lento       |\n");
-  printf("| ALT                     => Modo Rápido       |\n");
+  printf("| SHIFT + Key             => Modo lento        |\n");
+  printf("| ALT   + Key             => Modo Rápido       |\n");
   printf("|______________________________________________|\n");
 
   printf(" ________________________\n");
