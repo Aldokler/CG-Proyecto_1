@@ -1,8 +1,10 @@
 
-
+#include <stdbool.h>
+#include <wand/MagickWand.h>
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <GL/glut.h>
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -1128,11 +1130,17 @@ void bressenham_line ();
 
 void plot();
 
+void paint();
+
+void texture();
+
 void paint_pol();
 
 void convert_utop();
 
 void keyLector(unsigned char , int , int );
+
+int pointInside(int, PIX *, int , int );
 
 void specialKeyLector(int , int , int );
 

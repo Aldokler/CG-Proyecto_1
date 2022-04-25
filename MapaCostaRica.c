@@ -10,7 +10,20 @@ PIX* puntosAlajuela[LEN_ALAJUELA];
 PIX* puntosGuanacaste[LEN_GUANACASTE]; 
 PIX* puntosPuntarenas[LEN_PUNTARENAS]; 
 PIX* puntosPuntarenasB[LEN_PUNTARENASB]; 
-
+int herediaInside[36000][2] ;
+int limonInside[36000][2];
+int cartagoInside[36000][2];
+int sanjoseInside[36000][2];
+int alajuelaInside[36000][2];
+int guanacasteInside[36000][2];
+int puntarenasInside[36000][2];
+int herediaInsideLen=0;
+int limonInsideLen=0;
+int cartagoInsideLen=0;
+int sanjoseInsideLen=0;
+int alajuelaInsideLen=0;
+int guanacasteInsideLen=0;
+int puntarenasInsideLen=0;
 /*
 #########################################################################################################################################
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -77,12 +90,14 @@ void keyLector(unsigned char key, int x, int y){
   }
   if (key == '1'){
     glClear (GL_COLOR_BUFFER_BIT);
-    //Mapa con relleno de color
+    paint(puntosHeredia, LEN_HEREDIA,puntosLimon,LEN_LIMON,puntosCartago,LEN_CARTAGO,puntosSanJose,LEN_SANJOSE,puntosAlajuela,LEN_ALAJUELA,puntosGuanacaste,LEN_GUANACASTE,puntosPuntarenas,LEN_PUNTARENAS,puntosPuntarenasB,LEN_PUNTARENASB);
+
     glFlush();
   }
   if (key == '2'){
     glClear (GL_COLOR_BUFFER_BIT);
-    //Mapa con relleno de textura
+    texture(puntosHeredia, LEN_HEREDIA,puntosLimon,LEN_LIMON,puntosCartago,LEN_CARTAGO,puntosSanJose,LEN_SANJOSE,puntosAlajuela,LEN_ALAJUELA,puntosGuanacaste,LEN_GUANACASTE,puntosPuntarenas,LEN_PUNTARENAS,puntosPuntarenasB,LEN_PUNTARENASB);
+
     glFlush();
   }
   // Teclas para el traslado
@@ -490,4 +505,325 @@ void rotateMap(double grado) {
   
   R_puntos(puntosPuntarenasB, LEN_PUNTARENASB, grado);
   paint_pol(puntosPuntarenasB, LEN_PUNTARENASB);
+}
+void paint(PIX* P1, int n1,PIX* P2, int n2,PIX* P3, int n3,PIX* P4, int n4,PIX* P5, int n5,PIX* P6, int n6,PIX* P7, int n7,PIX* P8, int n8){
+  if(herediaInsideLen==0){
+  PIX* list1 = clip_lines(P1, n1);
+  PIX* list2 = clip_lines(P2, n2);
+  PIX* list3 = clip_lines(P3, n3);
+  PIX* list4 = clip_lines(P4, n4);
+  PIX* list5 = clip_lines(P5, n5);
+  PIX* list6 = clip_lines(P6, n6);
+  PIX* list7 = clip_lines(P7, n7);
+  PIX* list8 = clip_lines(P8, n8);
+  for (int i = 0; i <600; i++)
+  {
+    for (int o = 0; o <600; o++)
+  {
+    if(pointInside(n1,list1,o,i)==1){
+      glColor3f (1,1,1);
+      plot(o,i);
+      herediaInside[herediaInsideLen][0]=o;
+      herediaInside[herediaInsideLen][1]=i;
+      herediaInsideLen+=1;
+    }
+    else if(pointInside(n2,list2,o,i)==1){
+      glColor3f (1,0,0);
+      plot(o,i);
+      limonInside[limonInsideLen][0]=o;
+      limonInside[limonInsideLen][1]=i;
+      limonInsideLen+=1;
+    }
+    else if(pointInside(n3,list3,o,i)==1){
+      glColor3f (0,1,0);
+      plot(o,i);
+      cartagoInside[cartagoInsideLen][0]=o;
+      cartagoInside[cartagoInsideLen][1]=i;
+      cartagoInsideLen+=1;
+    }
+    else if(pointInside(n4,list4,o,i)==1){
+      glColor3f (0,0,1);
+      plot(o,i);
+      sanjoseInside[sanjoseInsideLen][0]=o;
+      sanjoseInside[sanjoseInsideLen][1]=i;
+      sanjoseInsideLen+=1;
+    }
+    else if(pointInside(n5,list5,o,i)==1){
+      glColor3f (0,1,1);
+      plot(o,i);
+      alajuelaInside[alajuelaInsideLen][0]=o;
+      alajuelaInside[alajuelaInsideLen][1]=i;
+      alajuelaInsideLen+=1;
+    }
+    else if(pointInside(n6,list6,o,i)==1){
+      glColor3f (1,1,0);
+      plot(o,i);
+      guanacasteInside[guanacasteInsideLen][0]=o;
+      guanacasteInside[guanacasteInsideLen][1]=i;
+      guanacasteInsideLen+=1;
+    }
+    else if(pointInside(n7,list7,o,i)==1){
+      glColor3f (1,0,1);
+      plot(o,i);
+      puntarenasInside[puntarenasInsideLen][0]=o;
+      puntarenasInside[puntarenasInsideLen][1]=i;
+      puntarenasInsideLen+=1;
+    }
+    else if(pointInside(n8,list8,o,i)==1){
+      glColor3f (1,0,1);
+      plot(o,i);
+      puntarenasInside[puntarenasInsideLen][0]=o;
+      puntarenasInside[puntarenasInsideLen][1]=i;
+      puntarenasInsideLen+=1;
+    }
+    
+  }
+  }
+}
+else{
+  glColor3f (1,1,1);
+  for (int i = 0; i < herediaInsideLen; i++)
+  {
+    plot(herediaInside[i][0],herediaInside[i][1]);
+  }
+  glColor3f (0,1,1);
+  for (int i = 0; i < alajuelaInsideLen; i++)
+  {
+    plot(alajuelaInside[i][0],alajuelaInside[i][1]);
+  }
+  glColor3f (1,0,1);
+  for (int i = 0; i < cartagoInsideLen; i++)
+  {
+    plot(cartagoInside[i][0],cartagoInside[i][1]);
+  }
+  glColor3f (1,1,0);
+  for (int i = 0; i < sanjoseInsideLen; i++)
+  {
+    plot(sanjoseInside[i][0],sanjoseInside[i][1]);
+  }
+  glColor3f (0,0,1);
+  for (int i = 0; i < limonInsideLen; i++)
+  {
+    plot(limonInside[i][0],limonInside[i][1]);
+  }
+  glColor3f (1,0,0);
+  for (int i = 0; i < guanacasteInsideLen; i++)
+  {
+    plot(guanacasteInside[i][0],guanacasteInside[i][1]);
+  }
+  glColor3f (1,0,0);
+  for (int i = 0; i < puntarenasInsideLen; i++)
+  {
+    plot(puntarenasInside[i][0],puntarenasInside[i][1]);
+  }
+}
+
+}
+
+void texture(PIX* P1, int n1,PIX* P2, int n2,PIX* P3, int n3,PIX* P4, int n4,PIX* P5, int n5,PIX* P6, int n6,PIX* P7, int n7,PIX* P8, int n8){
+
+  if(herediaInsideLen==0){
+  PIX* list1 = clip_lines(P1, n1);
+  PIX* list2 = clip_lines(P2, n2);
+  PIX* list3 = clip_lines(P3, n3);
+  PIX* list4 = clip_lines(P4, n4);
+  PIX* list5 = clip_lines(P5, n5);
+  PIX* list6 = clip_lines(P6, n6);
+  PIX* list7 = clip_lines(P7, n7);
+  PIX* list8 = clip_lines(P8, n8);
+  for (int i = 0; i <600; i++)
+  {
+    for (int o = 0; o <600; o++)
+  {
+    if(pointInside(n1,list1,o,i)==1){
+      
+      herediaInside[herediaInsideLen][0]=o;
+      herediaInside[herediaInsideLen][1]=i;
+      herediaInsideLen+=1;
+    }
+    else if(pointInside(n2,list2,o,i)==1){
+      
+      limonInside[limonInsideLen][0]=o;
+      limonInside[limonInsideLen][1]=i;
+      limonInsideLen+=1;
+    }
+    else if(pointInside(n3,list3,o,i)==1){
+      
+      cartagoInside[cartagoInsideLen][0]=o;
+      cartagoInside[cartagoInsideLen][1]=i;
+      cartagoInsideLen+=1;
+    }
+    else if(pointInside(n4,list4,o,i)==1){
+      
+      sanjoseInside[sanjoseInsideLen][0]=o;
+      sanjoseInside[sanjoseInsideLen][1]=i;
+      sanjoseInsideLen+=1;
+    }
+    else if(pointInside(n5,list5,o,i)==1){
+      
+      alajuelaInside[alajuelaInsideLen][0]=o;
+      alajuelaInside[alajuelaInsideLen][1]=i;
+      alajuelaInsideLen+=1;
+    }
+    else if(pointInside(n6,list6,o,i)==1){
+      
+      guanacasteInside[guanacasteInsideLen][0]=o;
+      guanacasteInside[guanacasteInsideLen][1]=i;
+      guanacasteInsideLen+=1;
+    }
+    else if(pointInside(n7,list7,o,i)==1){
+      
+      puntarenasInside[puntarenasInsideLen][0]=o;
+      puntarenasInside[puntarenasInsideLen][1]=i;
+      puntarenasInsideLen+=1;
+    }
+    else if(pointInside(n8,list8,o,i)==1){
+      
+      puntarenasInside[puntarenasInsideLen][0]=o;
+      puntarenasInside[puntarenasInsideLen][1]=i;
+      puntarenasInsideLen+=1;
+    }
+    
+  }
+  }
+}
+
+
+  size_t x;
+  MagickWand *magick_wand;
+  PixelIterator *iterator;
+  PixelWand **pixels;
+  MagickWandGenesis();
+  magick_wand = NewMagickWand();
+
+  MagickReadImage(magick_wand, "images/hr.jpg");
+  for (int i = 0; i < herediaInsideLen; i++)
+  {
+    iterator = NewPixelRegionIterator(magick_wand,herediaInside[i][0],herediaInside[i][1],1,1);
+    pixels=PixelGetNextIteratorRow(iterator,&x);
+    float colorR=PixelGetRed(pixels[0]);
+      float colorG=PixelGetGreen(pixels[0]);
+      float colorB=PixelGetBlue(pixels[0]);
+      
+      glColor3f (colorR,colorG,colorB);
+    plot(herediaInside[i][0],herediaInside[i][1]);
+  }
+  iterator=DestroyPixelIterator(iterator); 
+  magick_wand = DestroyMagickWand(magick_wand);
+  MagickWandTerminus();
+  MagickWandGenesis();
+  magick_wand = NewMagickWand();
+  MagickReadImage(magick_wand, "images/al.jpg");
+
+  for (int i = 0; i < alajuelaInsideLen; i++)
+  {
+    iterator = NewPixelRegionIterator(magick_wand,alajuelaInside[i][0],alajuelaInside[i][1],1,1);
+     pixels=PixelGetNextIteratorRow(iterator,&x);
+     float colorR=PixelGetRed(pixels[0]);
+      float colorG=PixelGetGreen(pixels[0]);
+      float colorB=PixelGetBlue(pixels[0]);
+      
+      glColor3f (colorR,colorG,colorB);
+    plot(alajuelaInside[i][0],alajuelaInside[i][1]);
+  }
+  iterator=DestroyPixelIterator(iterator); 
+      magick_wand = DestroyMagickWand(magick_wand);
+  MagickWandTerminus();
+  MagickWandGenesis();
+  magick_wand = NewMagickWand();
+  MagickReadImage(magick_wand, "images/ct.jpg");
+  for (int i = 0; i < cartagoInsideLen; i++)
+  {
+    iterator = NewPixelRegionIterator(magick_wand,cartagoInside[i][0],cartagoInside[i][1],1,1);
+
+     pixels=PixelGetNextIteratorRow(iterator,&x);
+     float colorR=PixelGetRed(pixels[0]);
+      float colorG=PixelGetGreen(pixels[0]);
+      float colorB=PixelGetBlue(pixels[0]);
+      
+      glColor3f (colorR,colorG,colorB);
+    plot(cartagoInside[i][0],cartagoInside[i][1]);
+  }
+  iterator=DestroyPixelIterator(iterator); 
+      magick_wand = DestroyMagickWand(magick_wand);
+  MagickWandTerminus();
+  MagickWandGenesis();
+  magick_wand = NewMagickWand();
+  MagickReadImage(magick_wand, "images/sj.jpg");
+  for (int i = 0; i < sanjoseInsideLen; i++)
+  {
+    iterator = NewPixelRegionIterator(magick_wand,sanjoseInside[i][0],sanjoseInside[i][1],1,1);
+     pixels=PixelGetNextIteratorRow(iterator,&x);
+     float colorR=PixelGetRed(pixels[0]);
+      float colorG=PixelGetGreen(pixels[0]);
+      float colorB=PixelGetBlue(pixels[0]);
+      
+      glColor3f (colorR,colorG,colorB);
+    plot(sanjoseInside[i][0],sanjoseInside[i][1]);
+  }
+  iterator=DestroyPixelIterator(iterator); 
+      magick_wand = DestroyMagickWand(magick_wand);
+  MagickWandTerminus();
+  MagickWandGenesis();
+  magick_wand = NewMagickWand();
+  MagickReadImage(magick_wand, "images/lm.jpg");
+  for (int i = 0; i < limonInsideLen; i++)
+  {
+    iterator = NewPixelRegionIterator(magick_wand,limonInside[i][0],limonInside[i][1],1,1);
+     pixels=PixelGetNextIteratorRow(iterator,&x);
+     float colorR=PixelGetRed(pixels[0]);
+      float colorG=PixelGetGreen(pixels[0]);
+      float colorB=PixelGetBlue(pixels[0]);
+      
+      glColor3f (colorR,colorG,colorB);
+    plot(limonInside[i][0],limonInside[i][1]);
+  }
+  iterator=DestroyPixelIterator(iterator); 
+      magick_wand = DestroyMagickWand(magick_wand);
+  MagickWandTerminus();
+  MagickWandGenesis();
+  magick_wand = NewMagickWand();
+  MagickReadImage(magick_wand, "images/gn.jpg");
+  for (int i = 0; i < guanacasteInsideLen; i++)
+  {
+    iterator = NewPixelRegionIterator(magick_wand,guanacasteInside[i][0],guanacasteInside[i][1],1,1);
+     pixels=PixelGetNextIteratorRow(iterator,&x);
+     float colorR=PixelGetRed(pixels[0]);
+      float colorG=PixelGetGreen(pixels[0]);
+      float colorB=PixelGetBlue(pixels[0]);
+      
+      glColor3f (colorR,colorG,colorB);
+    plot(guanacasteInside[i][0],guanacasteInside[i][1]);
+  }
+  iterator=DestroyPixelIterator(iterator); 
+      magick_wand = DestroyMagickWand(magick_wand);
+  MagickWandTerminus();
+  MagickWandGenesis();
+  magick_wand = NewMagickWand();
+  MagickReadImage(magick_wand, "images/pt.jpg");
+  for (int i = 0; i < puntarenasInsideLen; i++)
+  {
+    iterator = NewPixelRegionIterator(magick_wand,puntarenasInside[i][0],puntarenasInside[i][1],1,1);
+     pixels=PixelGetNextIteratorRow(iterator,&x);
+     float colorR=PixelGetRed(pixels[0]);
+      float colorG=PixelGetGreen(pixels[0]);
+      float colorB=PixelGetBlue(pixels[0]);
+      
+      glColor3f (colorR,colorG,colorB);
+    plot(puntarenasInside[i][0],puntarenasInside[i][1]);
+  }
+  iterator=DestroyPixelIterator(iterator); 
+      magick_wand = DestroyMagickWand(magick_wand);
+  MagickWandTerminus();
+}
+
+int pointInside(int vertices, PIX* vert  , int x, int y)
+{
+  int i, j, c = 0;
+  for (i = 0, j = vertices-1; i < vertices; j = i++) {
+    if ( ((vert[i].y>y) != (vert[j].y>y)) &&
+     (x < (vert[j].x-vert[i].x) * (y-vert[i].y) / (vert[j].y-vert[i].y) + vert[i].x) )
+       c = !c;
+  }
+  return c;
 }
