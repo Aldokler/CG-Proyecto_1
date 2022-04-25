@@ -3,8 +3,8 @@
 #include "../Constantes.h"
 #endif
 
-int ** matriz_Z;
+double ** matriz_Z;
 
 void create_Z_Matrix();
 
-void Z_puntos(int z);
+void Z_puntos(double z);
