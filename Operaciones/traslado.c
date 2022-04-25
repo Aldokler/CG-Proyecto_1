@@ -11,7 +11,7 @@ void create_T_Matrix(){
     matriz_T_D[2][2] = 1;
 }
 
-double** trasladarD(int d_x, int d_y,double** matriz_XY){
+double** trasladarD(double d_x, double d_y,double** matriz_XY){
     matriz_T_D[0][2] = d_x;
     matriz_T_D[1][2] = d_y;
 
@@ -39,7 +39,7 @@ void T_puntos(PIX* apex_list, int n,int d_x, int d_y){
     free(matriz_final);
 }
 
-void T_puntos_D(PIX* apex_list, int n,int d_x, int d_y){
+void T_puntos_D(PIX* apex_list, int n,double d_x, double d_y){
     double** matriz_final = declararMatrizD (3,1);
     matriz_final[2][0] = 1;
 
