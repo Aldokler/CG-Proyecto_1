@@ -26,6 +26,7 @@
 
 int TRASLADE_VALUE = 20;
 int ROTATE_VALUE = 10;
+int MODE_VALUE = 0;
 
 typedef struct {
   long double x;
